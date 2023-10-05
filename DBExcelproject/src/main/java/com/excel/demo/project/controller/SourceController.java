@@ -1,4 +1,4 @@
-package excelcontroller;
+package com.excel.demo.project.controller;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +18,7 @@ import com.excel.demo.project.helper.SourceHelper;
 import com.excel.demo.project.service.SourceService;
 
 @RestController
-public class ExcelController {
+public class SourceController {
 	@Autowired
 	private SourceService sourcService;
 	

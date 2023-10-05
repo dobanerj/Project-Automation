@@ -1,5 +1,6 @@
-package excelreaderentity;
+package com.excel.demo.project.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -473,6 +474,8 @@ public class SourceData {
 	}
 	public void setRoll_off(String roll_off) {
 		this.roll_off = roll_off;
-	}	
+	}
+	
+	
 	
 }

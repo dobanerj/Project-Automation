@@ -1,4 +1,4 @@
-package excelaccesscode;
+package com.excel.demo.project.helper;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -14,13 +14,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
-import excelreadersourcerepo.SourcingRepo;
-
-import excelreaderentity.SourceData;
-
+import com.excel.demo.project.entity.SourceData;
+import com.excel.demo.project.repo.SourcingRepo;
 
 
-public class ExcelDataService {
+
+public class SourceHelper {
 	@Autowired
 	private SourcingRepo sourcingRepo;
 	
