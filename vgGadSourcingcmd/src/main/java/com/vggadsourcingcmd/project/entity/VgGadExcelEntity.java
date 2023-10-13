@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class VgGadExcelEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int ggid;
 	private String li_lrId;
 	private double perNr;

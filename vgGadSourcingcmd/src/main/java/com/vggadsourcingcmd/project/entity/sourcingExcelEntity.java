@@ -9,8 +9,8 @@ import javax.persistence.Table;
 @Table(name = "VG_SOURCING")
 @Entity
 public class sourcingExcelEntity {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int gGId;
 	private double vGCrewId;
 	private String resourceName;
