@@ -20,18 +20,19 @@ public class DTSourcingVGGadService {
 	
 	public void generateExcel() throws IOException, SQLException {
 		List<reportHelper> data = ReportUtilHelper.readPostgres();
+		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
 		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 	    Sheet sheet = workbook.createSheet("Data");
 	 	Row row=sheet.createRow(0);
-		row.createCell(0).setCellValue("Ggid");
-		row.createCell(1).setCellValue("Li_lr_id");
+		row.createCell(0).setCellValue("GGID");
+		row.createCell(1).setCellValue("LI/LR ID");
 		row.createCell(2).setCellValue("Per_nr");
-		row.createCell(3).setCellValue("Local_grade");
-		row.createCell(4).setCellValue("Region");
-		row.createCell(5).setCellValue("Project_name");
+		row.createCell(3).setCellValue("LOCAL GRADE");
+		row.createCell(4).setCellValue("REGION");
+		row.createCell(5).setCellValue("PROJECT CODE");
 		row.createCell(6).setCellValue("Practice");
 		row.createCell(7).setCellValue("Sub_practice");
 		row.createCell(8).setCellValue("Bu_portfolios");
@@ -53,7 +54,7 @@ public class DTSourcingVGGadService {
 
 		int dataRowIndex =1 ;
 		 for (reportHelper excel1 : data){
-			Row dataRow=sheet.createRow(dataRowIndex);
+			Row dataRow=sheet.createRow(dataRowIndex++);
 			dataRow.createCell(0).setCellValue(excel1.getGgid());
 			dataRow.createCell(1).setCellValue(excel1.getLi_lr_id());
 			dataRow.createCell(2).setCellValue(excel1.getPer_nr());
@@ -79,15 +80,16 @@ public class DTSourcingVGGadService {
 			dataRow.createCell(22).setCellValue(excel1.getTotal_contract_amount());
 			dataRow.createCell(23).setCellValue(excel1.getVgcrew_id());
 		}
-		try (FileOutputStream outputStream = new FileOutputStream(file,false))
+		try 
 		 {	
-             workbook.write(outputStream);
-			 outputStream.close();
+            outputStream = new FileOutputStream(file,false); 
+			workbook.write(outputStream);
+			 
          } catch (IOException e) {
              e.printStackTrace();
          }finally{
 			workbook.close();
-			
+			outputStream.close();
 		 }
      } catch (IOException e) {
          e.printStackTrace();
