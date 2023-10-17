@@ -1,4 +1,4 @@
-package com.vggadsourcingcmd.project.helper;
+package com.example.demo.helper;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -14,8 +14,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vggadsourcingcmd.project.entity.VgGadExcelEntity;
-import com.vggadsourcingcmd.project.repo.vgGadRepo;
+import com.example.demo.entity.VgGadExcelEntity;
+import com.example.demo.repo.vgGadRepo;
+
 
 public class vgGadHelper {
 	@Autowired

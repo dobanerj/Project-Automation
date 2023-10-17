@@ -1,4 +1,4 @@
-package com.vggadsourcingcmd.project.helper;
+package com.example.demo.helper;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -8,8 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vggadsourcingcmd.project.entity.sourcingExcelEntity;
-import com.vggadsourcingcmd.project.repo.sourcingExcelRepo;
+import com.example.demo.entity.sourcingExcelEntity;
+import com.example.demo.repo.sourcingExcelRepo;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;

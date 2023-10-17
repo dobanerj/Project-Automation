@@ -1,15 +1,12 @@
-package com.vggadsourcingcmd.project.entity;
+package com.example.demo.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "VG_SOURCING")
+@Table(name = "vg_sourcing")
 @Entity
 public class sourcingExcelEntity {
-	
 	@Id
 	private String gGId;
 	private double vGCrewId;
@@ -148,4 +145,8 @@ public class sourcingExcelEntity {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	
+	
+
 }

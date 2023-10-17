@@ -1,9 +1,10 @@
-package com.vggadsourcingcmd.project.repo;
+package com.example.demo.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.vggadsourcingcmd.project.entity.VgGadExcelEntity;
+import com.example.demo.entity.VgGadExcelEntity;
+
 
 
 @Repository

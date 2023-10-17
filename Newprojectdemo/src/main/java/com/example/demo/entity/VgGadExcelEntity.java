@@ -1,15 +1,12 @@
-package com.vggadsourcingcmd.project.entity;
+package com.example.demo.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "VG_GadExcel")
+@Table(name = "VG_Gad_excel")
 @Entity
 public class VgGadExcelEntity {
-
 	@Id
 	private String ggid;
 	private String li_lrId;
@@ -602,6 +599,6 @@ public class VgGadExcelEntity {
 	public void setGroupaccountName(String groupaccountName) {
 		this.groupaccountName = groupaccountName;
 	}
-
+	
 	
 }
