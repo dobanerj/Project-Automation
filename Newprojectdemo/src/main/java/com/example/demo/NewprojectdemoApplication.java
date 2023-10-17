@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -30,7 +31,7 @@ public class NewprojectdemoApplication implements CommandLineRunner{
 	public static void main(String[] args){
 		SpringApplication.run(NewprojectdemoApplication.class, args);
 	}
-		public void run(String... args){
+		public void run(String... args) throws SQLException{
 			String path =args[0];
 			File file=new File(path);
 			

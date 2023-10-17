@@ -1,7 +1,9 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "vg_sourcing")
@@ -23,7 +25,8 @@ public class sourcingExcelEntity {
 	private String roleEndDate;
 	private String totalContractAmount;
 	private String comment;
-	private String status;
+	private String status;	
+
 	public sourcingExcelEntity() {
 		super();
 		// TODO Auto-generated constructor stub

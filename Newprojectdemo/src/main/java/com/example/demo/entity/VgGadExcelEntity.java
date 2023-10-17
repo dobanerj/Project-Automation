@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Table(name = "VG_Gad_excel")
@@ -79,6 +81,11 @@ public class VgGadExcelEntity {
 	private String regionType;
 	private String cgstartDate;
 	private String groupaccountName;
+
+	@OneToOne()
+    @JoinColumn(name="ggid")
+    private sourcingExcelEntity srcEnt;
+
 	public VgGadExcelEntity() {
 		super();
 		// TODO Auto-generated constructor stub
