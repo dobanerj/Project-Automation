@@ -28,6 +28,7 @@ public class reportHelper {
 	private String status;
 	private String total_contract_amount;
 	private double vgcrew_id;
+	
 
 
 	

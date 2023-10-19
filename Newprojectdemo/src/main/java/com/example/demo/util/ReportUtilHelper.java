@@ -56,7 +56,7 @@ public class ReportUtilHelper {
                 helper.setSow_id(rs.getString("sow_id"));
                 helper.setStatus(rs.getString("status"));
                 helper.setTotal_contract_amount(rs.getString("total_contract_amount"));
-                helper.setVgcrew_id(rs.getDouble("vgcrew_id"));
+                ((reportHelper) helper).setVgcrew_id(rs.getDouble("vgcrew_id"));
 				listOfReport.add(helper);
 				
 				

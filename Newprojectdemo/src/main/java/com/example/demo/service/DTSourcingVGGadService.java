@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import com.example.demo.helper.reportHelper;
 import com.example.demo.util.ReportUtilHelper;
 
+
+
 @Service
 public class DTSourcingVGGadService {
 	
@@ -22,7 +24,7 @@ public class DTSourcingVGGadService {
 		List<reportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+		File file = new File("C:/Users/ochakrav/Documents/Report/HCReport.xlsx");
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 	    Sheet sheet = workbook.createSheet("Data");
@@ -78,7 +80,7 @@ public class DTSourcingVGGadService {
 			dataRow.createCell(20).setCellValue(excel1.getSow_id());
 			dataRow.createCell(21).setCellValue(excel1.getStatus());
 			dataRow.createCell(22).setCellValue(excel1.getTotal_contract_amount());
-			dataRow.createCell(23).setCellValue(excel1.getVgcrew_id());
+			dataRow.createCell(23).setCellValue(((reportHelper) excel1).getVgcrew_id());
 		}
 		try 
 		 {	
