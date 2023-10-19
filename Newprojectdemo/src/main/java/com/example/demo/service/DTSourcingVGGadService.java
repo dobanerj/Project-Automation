@@ -2,45 +2,39 @@ package com.example.demo.service;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.File;
+import java.sql.SQLException;
 import java.util.List;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.sourcingExcelEntity;
 import com.example.demo.helper.reportHelper;
-import com.example.demo.repo.reportRepo;
-import com.example.demo.repo.sourcingExcelRepo;
-import com.example.demo.repo.vgGadRepo;
+import com.example.demo.util.ReportUtilHelper;
+
+
 
 @Service
 public class DTSourcingVGGadService {
 	
-	@Autowired
-	private reportRepo reportrepo;
-	
-	
-	public void generateExcel() throws IOException {
-		List<reportHelper> data = reportrepo.report();
+	public void generateExcel() throws IOException, SQLException {
+		List<reportHelper> data = ReportUtilHelper.readPostgres();
+		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
+		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+		file.getParentFile().mkdirs(); // Will create parent directories if not exists
+		file.createNewFile();	
 	    Sheet sheet = workbook.createSheet("Data");
 	 	Row row=sheet.createRow(0);
-		row.createCell(0).setCellValue("Ggid");
-		row.createCell(1).setCellValue("Li_lr_id");
+		row.createCell(0).setCellValue("GGID");
+		row.createCell(1).setCellValue("LI/LR ID");
 		row.createCell(2).setCellValue("Per_nr");
-		row.createCell(3).setCellValue("Local_grade");
-		row.createCell(4).setCellValue("Region");
-		row.createCell(5).setCellValue("Project_name");
+		row.createCell(3).setCellValue("LOCAL GRADE");
+		row.createCell(4).setCellValue("REGION");
+		row.createCell(5).setCellValue("PROJECT CODE");
 		row.createCell(6).setCellValue("Practice");
 		row.createCell(7).setCellValue("Sub_practice");
 		row.createCell(8).setCellValue("Bu_portfolios");
@@ -60,12 +54,9 @@ public class DTSourcingVGGadService {
 		row.createCell(22).setCellValue("Total_contract_amount");
 		row.createCell(23).setCellValue("Vgcrew_id");
 
-
-	
-		
 		int dataRowIndex =1 ;
 		 for (reportHelper excel1 : data){
-			Row dataRow=sheet.createRow(dataRowIndex);
+			Row dataRow=sheet.createRow(dataRowIndex++);
 			dataRow.createCell(0).setCellValue(excel1.getGgid());
 			dataRow.createCell(1).setCellValue(excel1.getLi_lr_id());
 			dataRow.createCell(2).setCellValue(excel1.getPer_nr());
@@ -89,17 +80,19 @@ public class DTSourcingVGGadService {
 			dataRow.createCell(20).setCellValue(excel1.getSow_id());
 			dataRow.createCell(21).setCellValue(excel1.getStatus());
 			dataRow.createCell(22).setCellValue(excel1.getTotal_contract_amount());
-			dataRow.createCell(23).setCellValue(excel1.getVgcrew_id());
-		
-			
-			
-			
+			dataRow.createCell(23).setCellValue(((reportHelper) excel1).getVgcrew_id());
 		}
-		 try (FileOutputStream outputStream = new FileOutputStream("target/exceldata.xlsx")) {
-             workbook.write(outputStream);
+		try 
+		 {	
+            outputStream = new FileOutputStream(file,false); 
+			workbook.write(outputStream);
+			 
          } catch (IOException e) {
              e.printStackTrace();
-         }
+         }finally{
+			workbook.close();
+			outputStream.close();
+		 }
      } catch (IOException e) {
          e.printStackTrace();
      }

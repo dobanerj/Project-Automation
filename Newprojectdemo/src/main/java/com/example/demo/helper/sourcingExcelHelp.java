@@ -21,8 +21,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class sourcingExcelHelp {
-	@Autowired
-	private sourcingExcelRepo excelRepo;
+	
 	
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
@@ -66,11 +65,11 @@ public class sourcingExcelHelp {
 					{
 					case 0:
 						cell.setCellType(CellType.STRING);
-						sourcedata.setgGId(cell.getStringCellValue());
+						sourcedata.setGGId(cell.getStringCellValue());
 						break;
 					case 1:
 						cell.setCellType(CellType.NUMERIC);
-						sourcedata.setvGCrewId(cell.getNumericCellValue());
+						sourcedata.setVGCrewId(cell.getNumericCellValue());
 						break;
 					case 2:
 						cell.setCellType(CellType.STRING);
