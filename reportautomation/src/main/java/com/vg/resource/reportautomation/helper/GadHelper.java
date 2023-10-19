@@ -20,13 +20,17 @@ public class GadHelper {
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
 		String contentType = file.getContentType();
-		if(contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+		if(contentType!=null && contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
 		{
 			return true;
 		}
 		return false;
 	}
 	
+	/**
+	 * @param is
+	 * @return
+	 */
 	public static List<vgGadEntity> convertExceltoList(InputStream is)
 	{
 		List<vgGadEntity> list = new ArrayList<>();

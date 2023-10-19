@@ -8,6 +8,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+
 import com.vg.resource.reportautomation.helper.ReportHelper;
 
 
@@ -72,4 +80,26 @@ public class ReportUtilHelper {
 		}
 		return listOfReport;
 	}
+
+public static Cell createRedCell(int cellNo,Row row,CellStyle style){			
+            style.setFillBackgroundColor(IndexedColors.RED.getIndex()); 
+            style.setFillPattern(FillPatternType.DIAMONDS);               
+            Cell cell=row.createCell(cellNo); 
+            cell.setCellStyle(style);   
+			return cell;
+} 
+public static Cell createBlueCell(int cellNo,Row row,CellStyle style){			
+            style.setFillBackgroundColor(IndexedColors.BLUE.getIndex()); 
+            style.setFillPattern(FillPatternType.DIAMONDS);               
+            Cell cell=row.createCell(cellNo); 
+            cell.setCellStyle(style);   
+			return cell;
+}
+public static Cell createOrangeCell(int cellNo,Row row,CellStyle style){			
+            style.setFillBackgroundColor(IndexedColors.GOLD.getIndex()); 
+            style.setFillPattern(FillPatternType.DIAMONDS);               
+            Cell cell=row.createCell(cellNo); 
+            cell.setCellStyle(style);   
+			return cell;
+}
 }
