@@ -27,7 +27,7 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+		File file = new File("C:/Users/ochakrav/Documents/Report/HCReport.xlsx");
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();

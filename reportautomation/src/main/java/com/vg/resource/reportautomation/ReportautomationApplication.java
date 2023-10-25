@@ -8,12 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import com.vg.resource.reportautomation.service.GadService;
 import com.vg.resource.reportautomation.service.ReportService;
 import com.vg.resource.reportautomation.service.SourceService;
+import com.vg.resource.reportautomation.service.vgVdiDetailService;
 
 @SpringBootApplication
+@EntityScan(basePackages = "com.vg.resource.reportautomation.entity")
 public class ReportautomationApplication implements CommandLineRunner{
 	@Autowired
 	GadService gadservice;
@@ -23,6 +26,10 @@ public class ReportautomationApplication implements CommandLineRunner{
 	
 	@Autowired
 	ReportService reportservice;
+	
+	@Autowired
+	vgVdiDetailService vdiservice;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(ReportautomationApplication.class, args);
 	}
@@ -41,6 +48,12 @@ public class ReportautomationApplication implements CommandLineRunner{
 		
 		System.out.println("Application start");
 		sourceservice.save(file1);
+		
+		String path2 =args[2];
+		File file2=new File(path2);
+		
+		System.out.println("Application start");
+		vdiservice.save(file2);
 		
 	
 		try {
