@@ -27,7 +27,7 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+		File file = new File("C:/Users/anghosal/Documents/Report/HCReport.xlsx");
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();
@@ -77,7 +77,7 @@ public class ReportService {
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Location VG");
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Total Contract Amount");
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Payment Type");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Commect(If Any)");
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Comment(If Any)");
 
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("SBU");
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("LOB");
@@ -100,25 +100,61 @@ public class ReportService {
 			dataRow.createCell(7).setCellValue("");
 			dataRow.createCell(8).setCellValue("");
 			dataRow.createCell(9).setCellValue(excel1.getLevel());
-			dataRow.createCell(10).setCellValue(excel1.getPo());
-			dataRow.createCell(11).setCellValue(excel1.getPrimaryskill());
-			dataRow.createCell(12).setCellValue(excel1.getResource_name());
-			dataRow.createCell(13).setCellValue(excel1.getRole_end_date());
-			dataRow.createCell(14).setCellValue(excel1.getPo());
-			dataRow.createCell(15).setCellValue(excel1.getPrimaryskill());
-			dataRow.createCell(16).setCellValue(excel1.getResource_name());
-			dataRow.createCell(17).setCellValue(excel1.getRole_end_date());
-			dataRow.createCell(18).setCellValue(excel1.getPo());
-			dataRow.createCell(19).setCellValue(excel1.getPrimaryskill());
-			dataRow.createCell(20).setCellValue(excel1.getResource_name());
-			dataRow.createCell(21).setCellValue(excel1.getRole_end_date());
-			dataRow.createCell(22).setCellValue(excel1.getResource_name());
-			dataRow.createCell(23).setCellValue(excel1.getRole_end_date());
-			dataRow.createCell(24).setCellValue(excel1.getRole_start_date());
-			dataRow.createCell(25).setCellValue(excel1.getSow_id());
-			dataRow.createCell(26).setCellValue(excel1.getStatus());
-			dataRow.createCell(27).setCellValue(excel1.getTotal_contract_amount());
-			dataRow.createCell(28).setCellValue((excel1).getVgcrew_id());
+			//grade revised Query modify
+			dataRow.createCell(10).setCellValue("");
+			dataRow.createCell(11).setCellValue(excel1.getLocal_grade());
+			dataRow.createCell(12).setCellValue(excel1.getRegion());
+			//region revised Query modify
+			dataRow.createCell(13).setCellValue("");
+			//GAD Cost Center Query modify
+			dataRow.createCell(14).setCellValue("");
+			//Project Code Query modify
+			dataRow.createCell(15).setCellValue("");
+			//Project Name Query modify
+			dataRow.createCell(16).setCellValue("");
+			dataRow.createCell(17).setCellValue(excel1.getJob_role());
+			dataRow.createCell(18).setCellValue(excel1.getPrimaryskill());
+			dataRow.createCell(19).setCellValue(excel1.getPractice());
+			dataRow.createCell(20).setCellValue(excel1.getSub_practice());
+			dataRow.createCell(21).setCellValue(excel1.getPo());
+			//SOW Name Query modify
+			dataRow.createCell(22).setCellValue("");
+			dataRow.createCell(23).setCellValue(excel1.getSow_id());
+			//SOW Start date Query modify
+			dataRow.createCell(24).setCellValue("");
+			//SOW End date Query modify
+			dataRow.createCell(25).setCellValue("");
+			//Exhibit Type Query modify
+			dataRow.createCell(26).setCellValue("");
+			//Resource Type Query modify
+			dataRow.createCell(27).setCellValue("");
+			dataRow.createCell(28).setCellValue(excel1.getHours());
+			dataRow.createCell(29).setCellValue(excel1.getHourly_rate());
+			dataRow.createCell(30).setCellValue(excel1.getAmount());
+			dataRow.createCell(31).setCellValue(excel1.getRole_start_date());
+			dataRow.createCell(32).setCellValue(excel1.getRole_end_date());
+			//location Query modify
+			dataRow.createCell(33).setCellValue("");
+			//Location VG Query modify
+			dataRow.createCell(34).setCellValue("");
+			dataRow.createCell(35).setCellValue(excel1.getTotal_contract_amount());
+			//Payment Type Query modify
+			dataRow.createCell(36).setCellValue("");
+			dataRow.createCell(37).setCellValue(excel1.getComment());
+			//SBU Query modify
+			dataRow.createCell(38).setCellValue("");
+			//LOB Query modify
+			dataRow.createCell(39).setCellValue("");
+			//DE Query modify
+			dataRow.createCell(40).setCellValue("");
+			//EM Query modify
+			dataRow.createCell(41).setCellValue("");
+			dataRow.createCell(42).setCellValue(excel1.getStatus());
+			dataRow.createCell(43).setCellValue(excel1.getBu_portfolios());
+			//End Date (R2D2) Query modify
+			dataRow.createCell(44).setCellValue("");
+			
+			
 		}
 		try 
 		 {	
