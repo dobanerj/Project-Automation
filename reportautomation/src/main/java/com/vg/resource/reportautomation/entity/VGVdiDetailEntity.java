@@ -1,5 +1,7 @@
 package com.vg.resource.reportautomation.entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,7 +21,7 @@ public class VGVdiDetailEntity {
 	private String vdi_name;
 	private String odc_location;
 	private String status;
-	private String lwd;
+	private Date lwd;
 	private String comments;
 	
 	

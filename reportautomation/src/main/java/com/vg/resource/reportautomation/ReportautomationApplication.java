@@ -13,6 +13,7 @@ import com.vg.resource.reportautomation.service.GadService;
 import com.vg.resource.reportautomation.service.NoFSExcelService;
 import com.vg.resource.reportautomation.service.ReportService;
 import com.vg.resource.reportautomation.service.SourceService;
+import com.vg.resource.reportautomation.service.vgVdiDetailService;
 
 @SpringBootApplication
 public class ReportautomationApplication implements CommandLineRunner{
@@ -27,6 +28,9 @@ public class ReportautomationApplication implements CommandLineRunner{
 	
 	@Autowired
 	NoFSExcelService noFSexcelService;
+	
+	@Autowired
+	vgVdiDetailService vgVdidetailService;
 	public static void main(String[] args) {
 		SpringApplication.run(ReportautomationApplication.class, args);
 	}
@@ -52,6 +56,13 @@ public class ReportautomationApplication implements CommandLineRunner{
 		
 		System.out.println("Application start");
 		noFSexcelService.save(file2);
+		System.out.println("Application end");
+		
+		String path3 =args[3];
+		File file3=new File(path3);
+		
+		System.out.println("Application start");
+		vgVdidetailService.save(file3);
 		System.out.println("Application end");
 		
 	
