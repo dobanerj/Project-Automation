@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
@@ -56,8 +57,8 @@ public class VGVdiDetailHelper {
 					
 					case 2:
 						cell.setCellType(CellType.STRING);					
-						if(cell.getStringCellValue().length()>0)
-							vdidata.setVdi_ggid(Integer.parseInt(cell.getStringCellValue()));
+						// if(cell.getStringCellValue().length()>0)
+						vdidata.setGgid(cell.getStringCellValue());
 						break;
 					
 					case 1:
@@ -83,8 +84,8 @@ public class VGVdiDetailHelper {
 						vdidata.setStatus(cell.getStringCellValue());
 						break;
 					case 9:
-						cell.setCellType(CellType.STRING);
-						vdidata.setLwd(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						vdidata.setLwd(cell.getDateCellValue());
 						break;
 					case 10:
 						vdidata.setComments(cell.getStringCellValue());

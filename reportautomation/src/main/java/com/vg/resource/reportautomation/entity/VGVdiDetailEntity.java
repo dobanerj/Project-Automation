@@ -1,6 +1,7 @@
 package com.vg.resource.reportautomation.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,10 +15,10 @@ import lombok.Data;
 @Entity
 public class VGVdiDetailEntity implements Serializable{
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer serialNo;
-	@Column(name="\"VDI_GGID\"" ,unique=true)
-	private Integer vdi_ggid;	
+	// @Column(name="\"VDI_GGID\"" ,unique=true)
+	private String ggid;	
 	@Column(name="\"CREWID\"")
 	private String id;
 	private String resource_name;
@@ -26,7 +27,7 @@ public class VGVdiDetailEntity implements Serializable{
 	private String vdi_name;
 	private String odc_location;
 	private String status;
-	private String lwd;
+	private Date lwd;
 	private String comments;
 	
 	
