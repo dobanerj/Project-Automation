@@ -47,11 +47,11 @@ public class ReportautomationApplication implements CommandLineRunner{
 		sourceservice.save(file1);
 		
 		
-		String path2 =args[0];
+		String path2 =args[2];
 		File file2=new File(path2);
 		
 		System.out.println("Application start");
-		gadservice.save(file2);
+		noFSexcelService.save(file2);
 		System.out.println("Application end");
 		
 	
