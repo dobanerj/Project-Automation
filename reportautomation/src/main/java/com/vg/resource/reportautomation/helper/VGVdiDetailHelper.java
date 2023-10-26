@@ -11,15 +11,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
-import com.vg.resource.reportautomation.repo.vgVdiDetailRepo;
 
 public class VGVdiDetailHelper {
-	@Autowired
-	private vgVdiDetailRepo vdiRepo;
 	
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
@@ -38,19 +34,15 @@ public class VGVdiDetailHelper {
 			
 			Workbook workbook = new XSSFWorkbook(is);
 			Sheet sheet = workbook.getSheetAt(0);
-			
-			int rowNumber =0;
 			Iterator<Row> iterator = sheet.iterator();
 			
 			while(iterator.hasNext())
 			{
 				Row row = iterator.next();
-				if(rowNumber == 0)
-				{
-					rowNumber++;
+				if(row.getRowNum() == 0)
+				{					
 					continue;
 				}
-				
 				Iterator<Cell> cells = row.iterator();
 				int cellId = 0;
 				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();
@@ -61,48 +53,40 @@ public class VGVdiDetailHelper {
 					Cell cell = cells.next();
 					switch(cellId)
 					{
-					case 0:
-						cell.setCellType(CellType.STRING);
-						vdidata.setGgid(cell.getStringCellValue());
-						break;
-					case 1:
-						cell.setCellType(CellType.STRING);
-						vdidata.setVendor(cell.getStringCellValue());
-						break;
+					
 					case 2:
-						cell.setCellType(CellType.STRING);
+						cell.setCellType(CellType.STRING);					
+						if(cell.getStringCellValue().length()>0)
+							vdidata.setVdi_ggid(Integer.parseInt(cell.getStringCellValue()));
+						break;
+					
+					case 1:
+						cell.setCellType(CellType.STRING);				
 						vdidata.setId(cell.getStringCellValue());
 						break;
 					case 3:
-						cell.setCellType(CellType.STRING);
 						vdidata.setResource_name(cell.getStringCellValue());
 						break;
 					case 4:
-						cell.setCellType(CellType.STRING);
 						vdidata.setCg_email_id(cell.getStringCellValue());
 						break;
 					case 5:
-						cell.setCellType(CellType.STRING);
 						vdidata.setVg_email_id(cell.getStringCellValue());
 						break;
 					case 6:
-						cell.setCellType(CellType.STRING);
 						vdidata.setVdi_name(cell.getStringCellValue());
 						break;
 					case 7:
-						cell.setCellType(CellType.STRING);
 						vdidata.setOdc_location(cell.getStringCellValue());
 						break;
 					case 8:
-						cell.setCellType(CellType.STRING);
 						vdidata.setStatus(cell.getStringCellValue());
 						break;
 					case 9:
-						cell.setCellType(CellType.NUMERIC);
-						vdidata.setLwd(cell.getDateCellValue());
+						cell.setCellType(CellType.STRING);
+						vdidata.setLwd(cell.getStringCellValue());
 						break;
 					case 10:
-						cell.setCellType(CellType.STRING);
 						vdidata.setComments(cell.getStringCellValue());
 						break;
 					
@@ -113,6 +97,7 @@ public class VGVdiDetailHelper {
 				}
 				list.add(vdidata);				
 			}
+			workbook.close();
 		}
 		catch(Exception e)
 		{

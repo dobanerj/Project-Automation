@@ -45,6 +45,8 @@ public class GadHelper {
 			while(iterator.hasNext())
 			{
 				Row row = iterator.next();
+				
+				//To skip Header Row
 				if(rowNumber == 0)
 				{
 					rowNumber++;
