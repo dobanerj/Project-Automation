@@ -15,7 +15,7 @@ import lombok.Data;
 @Table(name = "NoFsData")
 @Entity
 @Data
-public class NoFSExcelEntity {
+public class VGNonFSEntity {
 	
 	@Id
 	private int empID;

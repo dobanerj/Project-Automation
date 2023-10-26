@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.vg.resource.reportautomation.entity.NoFSExcelEntity;
-import com.vg.resource.reportautomation.helper.NoFSExcelHelp;
-import com.vg.resource.reportautomation.repo.NoFSExcelRepo;
+import com.vg.resource.reportautomation.entity.VGNonFSEntity;
+import com.vg.resource.reportautomation.helper.NonFSHelp;
+import com.vg.resource.reportautomation.repo.vgNonFSRepo;
 
 
 
@@ -17,10 +17,10 @@ import com.vg.resource.reportautomation.repo.NoFSExcelRepo;
 
 
 @Service
-public class NoFSExcelService {
+public class NonFSService {
 
 	@Autowired
-	private NoFSExcelRepo noFSExcelRepo;
+	private vgNonFSRepo noFSExcelRepo;
 	
 	
 	public void save(File file)
@@ -28,7 +28,7 @@ public class NoFSExcelService {
 		try
 		{
 			FileInputStream inputstream=new FileInputStream(file);
-			List<NoFSExcelEntity> noFSExcelEntity = NoFSExcelHelp.convertExceltoList(inputstream);
+			List<VGNonFSEntity> noFSExcelEntity = NonFSHelp.convertExceltoList(inputstream);
 			this.noFSExcelRepo.saveAll(noFSExcelEntity);
 			
 		}
@@ -38,7 +38,7 @@ public class NoFSExcelService {
 		}
 	}
 	
-	public List<NoFSExcelEntity> getAllData()
+	public List<VGNonFSEntity> getAllData()
 	{
 		return this.noFSExcelRepo.findAll();
 	}

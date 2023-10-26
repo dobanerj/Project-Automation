@@ -8,8 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vg.resource.reportautomation.entity.NoFSExcelEntity;
-import com.vg.resource.reportautomation.repo.NoFSExcelRepo;
+import com.vg.resource.reportautomation.entity.VGNonFSEntity;
+import com.vg.resource.reportautomation.repo.vgNonFSRepo;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -20,9 +20,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 
-public class NoFSExcelHelp {
+public class NonFSHelp {
 	@Autowired
-	private NoFSExcelRepo noFSExcelRepo;
+	private vgNonFSRepo noFSExcelRepo;
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
 		String contentType = file.getContentType();
@@ -33,9 +33,9 @@ public class NoFSExcelHelp {
 		return false;
 	}
 	
-	public static List<NoFSExcelEntity> convertExceltoList(InputStream is)
+	public static List<VGNonFSEntity> convertExceltoList(InputStream is)
 	{
-		List<NoFSExcelEntity> list = new ArrayList<>();
+		List<VGNonFSEntity> list = new ArrayList<>();
 		try {
 			
 			Workbook workbook = new XSSFWorkbook(is);
@@ -55,7 +55,7 @@ public class NoFSExcelHelp {
 				
 				Iterator<Cell> cells = row.iterator();
 				int cellId = 0;
-				NoFSExcelEntity noFSExceldata = new NoFSExcelEntity();
+				VGNonFSEntity noFSExceldata = new VGNonFSEntity();
 				while(cells.hasNext())
 
 				{
