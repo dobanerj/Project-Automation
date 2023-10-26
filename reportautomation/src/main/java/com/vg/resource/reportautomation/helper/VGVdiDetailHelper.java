@@ -15,12 +15,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
-import com.vg.resource.reportautomation.repo.vgVdiDetailRepo;
+import com.vg.resource.reportautomation.repo.VGVdiDetailRepo;
 
 
 public class VGVdiDetailHelper {
 	@Autowired
-	private vgVdiDetailRepo vdiRepo;
+	private VGVdiDetailRepo vdiRepo;
 	
 	public static boolean checkExcelFormat(MultipartFile file)
 	{

@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import com.vg.resource.reportautomation.service.GadService;
 import com.vg.resource.reportautomation.service.ReportService;
 import com.vg.resource.reportautomation.service.SourceService;
-import com.vg.resource.reportautomation.service.vgVdiDetailService;
+import com.vg.resource.reportautomation.service.VGVdiDetailService;
 
 @SpringBootApplication
 @EntityScan(basePackages = "com.vg.resource.reportautomation.entity")
@@ -28,7 +28,7 @@ public class ReportautomationApplication implements CommandLineRunner{
 	ReportService reportservice;
 	
 	@Autowired
-	vgVdiDetailService vdiservice;
+	VGVdiDetailService vgvdidetailservice;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ReportautomationApplication.class, args);
@@ -53,7 +53,7 @@ public class ReportautomationApplication implements CommandLineRunner{
 		File file2=new File(path2);
 		
 		System.out.println("Application start");
-		vdiservice.save(file2);
+		vgvdidetailservice.save(file2);
 		
 	
 		try {

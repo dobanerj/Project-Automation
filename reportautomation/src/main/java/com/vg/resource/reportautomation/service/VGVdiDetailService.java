@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
 import com.vg.resource.reportautomation.helper.VGVdiDetailHelper;
-import com.vg.resource.reportautomation.repo.vgVdiDetailRepo;
+import com.vg.resource.reportautomation.repo.VGVdiDetailRepo;
 
 @Service
-public class vgVdiDetailService {
+public class VGVdiDetailService {
 	
 	@Autowired
-	private vgVdiDetailRepo vgvdirepo;
+	private VGVdiDetailRepo vgvdirepo;
 	
 	
 	public void save(File file)
