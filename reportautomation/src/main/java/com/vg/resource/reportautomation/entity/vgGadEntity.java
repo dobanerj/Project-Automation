@@ -1,11 +1,13 @@
 package com.vg.resource.reportautomation.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.Data;
+
+
 @Data
 @Table(name = "VG_Gad")
 @Entity
@@ -82,8 +84,4 @@ public class vgGadEntity {
 	private String regionType;
 	private String cgstartDate;
 	private String groupaccountName;
-
-	
-	
-	
 }
