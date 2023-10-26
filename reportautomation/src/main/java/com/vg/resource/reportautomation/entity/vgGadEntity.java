@@ -1,6 +1,7 @@
 package com.vg.resource.reportautomation.entity;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,10 +10,11 @@ import lombok.Data;
 
 
 @Data
-@Table(name = "VG_Gad")
+@Table(name = "\"VG_GAD_DATA\"")
 @Entity
 public class vgGadEntity {
 	@Id
+	@Column(name="\"GGID\"")
 	private String ggid;
 	private String li_lrId;
 	private double perNr;

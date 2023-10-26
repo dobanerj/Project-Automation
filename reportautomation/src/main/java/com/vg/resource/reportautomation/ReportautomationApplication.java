@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.vg.resource.reportautomation.service.GadService;
-import com.vg.resource.reportautomation.service.NoFSExcelService;
+import com.vg.resource.reportautomation.service.NonFSService;
 import com.vg.resource.reportautomation.service.ReportService;
 import com.vg.resource.reportautomation.service.SourceService;
 import com.vg.resource.reportautomation.service.vgVdiDetailService;
@@ -27,7 +27,7 @@ public class ReportautomationApplication implements CommandLineRunner{
 	ReportService reportservice;
 	
 	@Autowired
-	NoFSExcelService noFSexcelService;
+	NonFSService noFSexcelService;
 	
 	@Autowired
 	vgVdiDetailService vgVdidetailService;

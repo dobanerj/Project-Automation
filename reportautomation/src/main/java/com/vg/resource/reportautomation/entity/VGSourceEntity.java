@@ -2,15 +2,17 @@ package com.vg.resource.reportautomation.entity;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Table(name = "vg_sourcing")
+@Table(name = "\"VG_SOURCE\"")
 @Entity
-public class VGSourceEntity {
+public class VGSourceEntity implements Serializable{
 	@Id
 	private String gGId;
 	private double vGCrewId;

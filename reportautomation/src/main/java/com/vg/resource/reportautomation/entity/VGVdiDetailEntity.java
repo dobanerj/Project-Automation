@@ -1,5 +1,6 @@
 package com.vg.resource.reportautomation.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,9 +9,9 @@ import javax.persistence.Table;
 
 import lombok.Data;
 @Data
-@Table(name = "VG_VDI_DETAIL")
+@Table(name = "\"VG_VDI_DETAIL\"")
 @Entity
-public class VGVdiDetailEntity {
+public class VGVdiDetailEntity implements Serializable{
 	@Id
 	private String ggid;
 	private String vendor;
