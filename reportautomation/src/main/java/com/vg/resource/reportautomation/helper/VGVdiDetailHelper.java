@@ -56,8 +56,7 @@ public class VGVdiDetailHelper {
 					
 					case 2:
 						cell.setCellType(CellType.STRING);					
-						if(cell.getStringCellValue().length()>0)
-							vdidata.setVdi_ggid(Integer.parseInt(cell.getStringCellValue()));
+							vdidata.setVdi_ggid(cell.getStringCellValue());
 						break;
 					
 					case 1:
@@ -83,8 +82,8 @@ public class VGVdiDetailHelper {
 						vdidata.setStatus(cell.getStringCellValue());
 						break;
 					case 9:
-						cell.setCellType(CellType.STRING);
-						vdidata.setLwd(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						vdidata.setLwd(cell.getDateCellValue());
 						break;
 					case 10:
 						vdidata.setComments(cell.getStringCellValue());

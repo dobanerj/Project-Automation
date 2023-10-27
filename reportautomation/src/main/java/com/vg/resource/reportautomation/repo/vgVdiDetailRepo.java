@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
 
 @Repository
-public interface vgVdiDetailRepo extends JpaRepository<VGVdiDetailEntity,String>{
+public interface vgVdiDetailRepo extends JpaRepository<VGVdiDetailEntity,Integer>{
 
 }

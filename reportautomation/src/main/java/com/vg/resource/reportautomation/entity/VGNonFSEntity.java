@@ -3,6 +3,7 @@ package com.vg.resource.reportautomation.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -16,22 +17,37 @@ import lombok.Data;
 public class VGNonFSEntity implements Serializable{
 	
 	@Id
+	@Column(name="\"EMP_ID\"")
 	private int empID;
+	@Column(name="\"MONTH\"")
 	private String month;
+	@Column(name="\"ACCOUNT_NAME\"")
 	private String accountName;
+	@Column(name="\"LOB\"")
 	private String lob;
+	@Column(name="\"EMP_NAME\"")
 	private String empName;
+	@Column(name="\"EMP_EMAIL_ID\"")
 	private String empEmailId;
+	@Column(name="\"EMP_USER_ID\"")
 	private String empUserID;
+	@Column(name="\"DESIGNATION\"")
 	private String designation;
+	@Column(name="\"PROJECT_CODE\"")
 	private String projectcode ;
+	@Column(name="\"PROJECT_NAME\"")
 	private String projectname;
+	@Column(name="\"START_DATE\"")
 	private Date startDate;
+	@Column(name="\"END_DATE\"")
 	private Date endDate;
+	@Column(name="\"REGION\"")
 	private String region;
+	@Column(name="\"LOCATION\"")
 	private String location;
+	@Column(name="\"REVISED_REGION\"")
 	private String revisedRegion;
-	private String comment;
+	@Column(name="\"IBS\"")
 	private String lbs;
 	
 }
