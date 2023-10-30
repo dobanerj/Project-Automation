@@ -37,9 +37,7 @@ public class ReportService {
 	    Sheet sheet = workbook.createSheet("Data");
 		int colIndex = 0;
 	 	Row row=sheet.createRow(0);  
-	 	
-		//ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("SR.No");
-		//ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("CrewId");
+
 	 	
 	 	ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_SR_NO);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CREW_ID);
