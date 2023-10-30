@@ -12,5 +12,7 @@ public interface ReportUtil {
             "vg_sourcing.vgcrew_id from vg_sourcing "+
             "inner join vg_gad_excel on vg_sourcing.ggid=vg_gad_excel.ggid";
 
-     public final String HC_REPORT_LOCATION= " ";       
+     public final String HC_REPORT_LOCATION= "C:/Report/HCReport.xlsx ";    
+     public final String HC_REPORT_SR_NO= "SR.No"; 
+      public final String HC_REPORT_CREW_ID= "CREWId";     
 } 

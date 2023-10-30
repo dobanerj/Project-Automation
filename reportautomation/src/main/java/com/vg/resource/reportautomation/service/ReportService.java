@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import com.vg.resource.reportautomation.helper.ReportHelper;
+import com.vg.resource.reportautomation.util.ReportUtil;
 import com.vg.resource.reportautomation.util.ReportUtilHelper;
 
 
@@ -27,7 +28,7 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File("C:/Users/SGHOSH31/Documents/Report/HCReport.xlsx");
+		File file = new File(ReportUtil.HC_REPORT_LOCATION);
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();
@@ -36,8 +37,8 @@ public class ReportService {
 	    Sheet sheet = workbook.createSheet("Data");
 		int colIndex = 0;
 	 	Row row=sheet.createRow(0);        
-		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("SR.No");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("CrewId");
+		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_SR_NO);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CREW_ID);
 		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("LI/LR ID");
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("GGID");
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Resource Name");
@@ -109,7 +110,7 @@ public class ReportService {
 			dataRow.createCell(16).setCellValue(excel1.getResource_name());
 			dataRow.createCell(17).setCellValue(excel1.getRole_end_date());
 			dataRow.createCell(18).setCellValue(excel1.getPo());
-			dataRow.createCell(19).setCellValue(excel1.getPrimaryskill());
+			dataRow.createCell(19).setCellValue(excel1.getPractice());
 			dataRow.createCell(20).setCellValue(excel1.getResource_name());
 			dataRow.createCell(21).setCellValue(excel1.getRole_end_date());
 			dataRow.createCell(22).setCellValue(excel1.getResource_name());

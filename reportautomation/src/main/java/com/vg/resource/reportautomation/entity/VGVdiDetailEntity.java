@@ -18,7 +18,7 @@ public class VGVdiDetailEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="\"VENDOR\"")
 	private Integer serialNo;
-	@Column(name="\"VDI_GGID\"" ,unique=true)
+	@Column(name="\"VDI_GGID\"" ,unique=false)
 	private String vdi_ggid;	
 	@Column(name="\"CREWID\"")
 	private String id;
