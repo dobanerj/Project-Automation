@@ -25,11 +25,32 @@ public class ReportHelper {
 	private String role_end_date;
 	private String role_start_date;
 	private String sow_id;
+	private String sow_name;
 	private String status;
 	private String total_contract_amount;
 	private double vgcrew_id;
-	
-
+	private String cap_email;
+	private String vg_email;
+	private String cap_manager;
+	private String vg_manager;
+	private String grade_revised;
+	private String region_revised;
+	private String costcenter;
+	private String project_Code;
+	private String role;
+	private String sow_start_date;
+	private String sow_end_date;
+	private String de_name;
+	private String em_name;
+	private String portfolio;
+	private String exhibit_type;
+	private String resource_type;
+	private String payment_type;
+	private String location;
+	private String vg_location;
+	private String sbu;
+	private String lob;
+	private String r2d2;
 
 	
 }
