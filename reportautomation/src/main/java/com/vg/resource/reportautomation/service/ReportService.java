@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import com.vg.resource.reportautomation.helper.ReportHelper;
+import com.vg.resource.reportautomation.util.ReportUtil;
 import com.vg.resource.reportautomation.util.ReportUtilHelper;
 
 
@@ -27,7 +28,7 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File("C:/Users/SGHOSH31/Documents/Report/HCReport.xlsx");
+		File file = new File("C:/Users/anghosal/OneDrive - Capgemini/Desktop/HCReport.xlsx");
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();
@@ -35,57 +36,62 @@ public class ReportService {
 		CellStyle styleORG=workbook.createCellStyle();
 	    Sheet sheet = workbook.createSheet("Data");
 		int colIndex = 0;
-	 	Row row=sheet.createRow(0);        
-		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("SR.No");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("CrewId");
-		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("LI/LR ID");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("GGID");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Resource Name");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Cap Email id");
-		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("VG Email");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("CG Manager(Sup Name)");
+	 	Row row=sheet.createRow(0);  
+	 	
+		//ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("SR.No");
+		//ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("CrewId");
+	 	
+	 	ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_SR_NO);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CREW_ID);
+	 	
+		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_LI_LR_ID);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GG_ID);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_RESOURCE_NAME);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CAP_EMAIL_ID);
+		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VG_EMAIL);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CG_MANAGER);
 
-		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue("VG Manager");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Level");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("Grade revised");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("Local Grade");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("Region");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("Region Revised");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("GAD Cost Center");
-		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue("Project Code");
+		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VG_MANAGER);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LEVEL);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GRADE_REVISED);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCAL_GRADE);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_REGION);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_REGION_REVISED);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GAD_COST_CENTER);
+		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PROJECT_CODE);
 
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("Project Name");
-		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue("Job Title/Role (Please use drop down selection)");
-		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue("Skill");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("Practice");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("Sub-Practice");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("PO#");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("SOW Name");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Sow Id");
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PROJECT_NAME);
+		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_JOB_ROLE);
+		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SKILL);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PRACTICE);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SUB_PRACTICE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PO);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_NAME);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_ID);
 
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("SOW Start date");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("SOW End date");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Exhibit Type");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Resource Type");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Hours");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Hourly Rate");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Amount");
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_START_DATE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_END_DATE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_EXHIBIT_TYPE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_RESOURCE_TYPE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURS);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURLY_RATE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_AMOUNT);
 
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Role Start date");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Role End date");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Location");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Location VG");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Total Contract Amount");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Payment Type");
-		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue("Commect(If Any)");
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_START_DATE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_END_DATE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCATION);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCATION_VG);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_TOTAL_CONTRACT_AMOUNT);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PAYMENT_TYPE);
+		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_COMMENT);
 
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("SBU");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("LOB");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("DE");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("EM");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("Current Status");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("BU Portfolios");
-		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue("End Date (R2D2");
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SBU);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LOB);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_DE);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EM);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_BU_PORTFOLIOS);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
 		int index=1;
 		int dataRowIndex =1 ;
 		 for (ReportHelper excel1 : data){
