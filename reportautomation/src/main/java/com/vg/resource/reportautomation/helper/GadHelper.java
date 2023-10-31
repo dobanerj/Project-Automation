@@ -237,8 +237,8 @@ public class GadHelper {
 						VgGadExcel.setProjectPUName(cell.getStringCellValue());
 						break;
 					case 44:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setProjectName(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						VgGadExcel.setProjectName(cell.getNumericCellValue());
 						break;
 					case 45:
 						cell.setCellType(CellType.STRING);

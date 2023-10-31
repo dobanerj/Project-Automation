@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,8 +19,11 @@ import lombok.Data;
 public class VGNonFSEntity implements Serializable{
 	
 	@Id
-	@Column(name="\"EMP_ID\"")
-	private int empID;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="\"VENDOR\"")
+	private Integer serialNo;
+	@Column(name="\"EMP_ID\"",unique=false)
+	private String empID;
 	@Column(name="\"MONTH\"")
 	private String month;
 	@Column(name="\"ACCOUNT_NAME\"")

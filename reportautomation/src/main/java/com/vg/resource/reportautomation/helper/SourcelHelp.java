@@ -89,8 +89,8 @@ public class SourcelHelp {
 						sourcedata.setPo(cell.getStringCellValue());
 						break;
 					case 7:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setSowId(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						sourcedata.setSowId((int)cell.getNumericCellValue());
 						break;
 					case 8:
 						cell.setCellType(CellType.STRING);

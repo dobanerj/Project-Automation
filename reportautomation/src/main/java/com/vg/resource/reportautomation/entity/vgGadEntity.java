@@ -99,7 +99,7 @@ public class vgGadEntity {
 	@Column(name="\"PROJECT_PU_NAME\"")
 	private String projectPUName;
 	@Column(name="\"PROJECT_NAME\"")
-	private String projectName;
+	private double projectName;
 	@Column(name="\"PROJECT_START_DATE\"")
 	private String projectStartDate;
 	@Column(name="\"PROJECT_ROLLOFF_DATE\"")
