@@ -40,7 +40,7 @@ public class vgGadEntity {
 	private String globalDateJoining;
 	@Column(name="\"LOCAL_DATE_JOINING\"")
 	private String localDateJoining;
-	@Column(name="\"EMAIL_ID\"")
+	@Column(name="\"CAP_EMAIL_ID\"")
 	private String emailId;
 	@Column(name="\"ORGANIZATION\"")
 	private String organization;
@@ -98,8 +98,8 @@ public class vgGadEntity {
 	private String accountName;
 	@Column(name="\"PROJECT_PU_NAME\"")
 	private String projectPUName;
-	@Column(name="\"PROJECT_NAME\"")
-	private double projectName;
+	@Column(name="\"PROJECT_CODE\"")
+	private double projectCode;
 	@Column(name="\"PROJECT_START_DATE\"")
 	private String projectStartDate;
 	@Column(name="\"PROJECT_ROLLOFF_DATE\"")
@@ -118,18 +118,10 @@ public class vgGadEntity {
 	private String lastProjectCode;
 	@Column(name="\"LAST_CLIENT_GROUPNAME\"")
 	private String lastclientgroupname;
-	@Column(name="\"BENCH_STATUS_ISW\"")
-	private String benchstatusISW;
 	@Column(name="\"SKILL_GROUP\"")
 	private String skillGroup;
-	@Column(name="\"BOOKING_ID\"")
-	private String bookingID;
 	@Column(name="\"TYPE_OF_PROJECT\"")
 	private String typeOfProject;
-	@Column(name="\"FUTURE_ACCOUNT_NAME\"")
-	private String futureAccountName;
-	@Column(name="\"FUTURE_PROJECT_CODE\"")
-	private String futureProjectCode;
 	@Column(name="\"ORGANIZATION_BU\"")
 	private String organizationBU;
 	@Column(name="\"NEW_BU\"")
@@ -143,13 +135,7 @@ public class vgGadEntity {
 	@Column(name="\"LAST_CHANGE_DATE\"")
 	private String lastchangedate;
 	@Column(name="\"PROJECT_TYPE\"")
-	private String projectType;
-	@Column(name="\"OPPORTUNITY_NAME\"")
-	private String opportunityName;
-	@Column(name="\"OPPORTUNITY_END_DATE\"")
-	private String opportunityEndDate;
-	@Column(name="\"BOOKING_TYPE\"")
-	private String bookingType;
+	private String projectType;	
 	@Column(name="\"REGION_TYPE\"")
 	private String regionType;
 	@Column(name="\"CG_START_DATE\"")

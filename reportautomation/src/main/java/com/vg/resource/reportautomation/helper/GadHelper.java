@@ -238,7 +238,7 @@ public class GadHelper {
 						break;
 					case 44:
 						cell.setCellType(CellType.NUMERIC);
-						VgGadExcel.setProjectName(cell.getNumericCellValue());
+						VgGadExcel.setProjectCode(cell.getNumericCellValue());
 						break;
 					case 45:
 						cell.setCellType(CellType.STRING);
@@ -277,79 +277,54 @@ public class GadHelper {
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setLastclientgroupname(cell.getStringCellValue());
 						break;
+					
 					case 54:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setBenchstatusISW(cell.getStringCellValue());
-						break;
-					case 55:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setSkillGroup(cell.getStringCellValue());
 						break;
-					case 56:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setBookingID(cell.getStringCellValue());
-						break;
-					case 57:
+					
+					case 55:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setTypeOfProject(cell.getStringCellValue());
 						break;
-					case 58:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setFutureAccountName(cell.getStringCellValue());
-						break;
-					case 59:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setFutureProjectCode(cell.getStringCellValue());
-						break;
-					case 60:
+					
+					case 56:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setOrganizationBU(cell.getStringCellValue());
 						break;
-					case 61:
+					case 57:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setNewBU(cell.getStringCellValue());
 						break;
-					case 62:
+					case 58:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setLocationStandardization(cell.getStringCellValue());
 						break;
-					case 63:
+					case 59:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setBuPortfolios(cell.getStringCellValue());
 						break;
-					case 64:
+					case 60:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setLastchangeMadeBy(cell.getStringCellValue());
 						break;
-					case 65:
+					case 61:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setLastchangedate(cell.getStringCellValue());
 						break;
-					case 66:
+					case 62:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setProjectType(cell.getStringCellValue());
-						break;
-					case 67:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setOpportunityName(cell.getStringCellValue());
-						break;
-					case 68:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setOpportunityEndDate(cell.getStringCellValue());
-						break;
-					case 69:
-						cell.setCellType(CellType.STRING);
-						VgGadExcel.setBookingType(cell.getStringCellValue());
-						break;
-					case 70:
+						break;					
+					case 63:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setRegionType(cell.getStringCellValue());
 						break;
-					case 71:
+					case 64:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setCgstartDate(cell.getStringCellValue());
 						break;
-					case 72:
+					case 65:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setGroupaccountName(cell.getStringCellValue());
 						break;
