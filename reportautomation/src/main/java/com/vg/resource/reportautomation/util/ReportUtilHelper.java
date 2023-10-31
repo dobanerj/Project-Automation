@@ -13,6 +13,8 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
 import com.vg.resource.reportautomation.helper.ReportHelper;
 
@@ -27,6 +29,7 @@ public class ReportUtilHelper {
 			e.printStackTrace();
 			
 		}
+		System.out.println("psql driver success!");
 		Connection connection = null;
 		Statement stmt = null;
 		List<ReportHelper> listOfReport = new ArrayList<>(); 
@@ -80,14 +83,14 @@ public class ReportUtilHelper {
 	}
 
 public static Cell createRedCell(int cellNo,Row row,CellStyle style){			
-            style.setFillBackgroundColor(IndexedColors.RED1.getIndex()); 
+			style.setFillBackgroundColor(IndexedColors.RED1.getIndex()); 
             style.setFillPattern(FillPatternType.DIAMONDS);               
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 } 
 public static Cell createBlueCell(int cellNo,Row row,CellStyle style){			
-            style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex()); 
+			style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());  
             style.setFillPattern(FillPatternType.DIAMONDS);               
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   

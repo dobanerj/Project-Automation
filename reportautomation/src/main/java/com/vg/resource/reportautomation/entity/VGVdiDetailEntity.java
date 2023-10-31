@@ -24,8 +24,6 @@ public class VGVdiDetailEntity implements Serializable{
 	private String id;
 	@Column(name="\"RESOURCE_NAME\"")
 	private String resource_name;
-	@Column(name="\"CG_EMAIL_ID\"")
-	private String cg_email_id;
 	@Column(name="\"VG_EMAIL_ID\"")
 	private String vg_email_id;
 	@Column(name="\"VDI_NAME\"")
