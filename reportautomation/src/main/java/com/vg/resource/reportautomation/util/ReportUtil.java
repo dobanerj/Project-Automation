@@ -1,16 +1,15 @@
 package com.vg.resource.reportautomation.util;
 
 public interface ReportUtil {
-    public final String query="select vg_gad_excel.li_lr_id," + 
-            "vg_gad_excel.per_nr, vg_gad_excel.local_grade,vg_gad_excel.region,"+
-            "vg_gad_excel.project_name, vg_gad_excel.practice, vg_gad_excel.sub_practice, "+
-           " vg_gad_excel.bu_portfolios, vg_sourcing.ggid, vg_sourcing.amount, vg_sourcing.comment, "+
-           " vg_sourcing.hourly_rate, vg_sourcing.hours, vg_sourcing.job_role, vg_sourcing.level, "+
-            "vg_sourcing.po, vg_sourcing.primaryskill, vg_sourcing.resource_name, "+
-            "vg_sourcing.role_end_date, vg_sourcing.role_start_date, vg_sourcing.sow_id, "+
-            "vg_sourcing.status, vg_sourcing.total_contract_amount, "+
-            "vg_sourcing.vgcrew_id from vg_sourcing "+
-            "inner join vg_gad_excel on vg_sourcing.ggid=vg_gad_excel.ggid";
+    public final String query="SELECT Distinct  VG_GAD_DATA.LI_LR_ID , VG_GAD_DATA.PERNR ," +
+    "VG_GAD_DATA.LOCAL_GRADE ,VG_GAD_DATA.REGION , VG_GAD_DATA.PROJECT_NAME , VG_GAD_DATA.PRACTICE,"+
+    "VG_GAD_DATA.SUB_PRACTICE ,VG_GAD_DATA.BU_PORTFOLIOS , \"VG_SOURCE\".\"GGID\" , \"VG_SOURCE\".AMOUNT , "+
+    "\"VG_SOURCE\".\"COMMENTS\" ,\"VG_SOURCE\".HOURLY_RATE , \"VG_SOURCE\".HOURS , \"VG_SOURCE\".JOB_ROLE ," +
+    "\"VG_SOURCE\".LEVEL ,\"VG_SOURCE\".PO , VG_SOURC .PRIMARY_SKILL , \"VG_SOURCE\".RESOURCE_NAME ,"+
+    "\"VG_SOURCE\".VG_CREW_ID , VG_GAD_DATA.EMAIL_ID , VG_VDI_DETAIL.VG_EMAIL_ID ,"+
+    "VG_VDI_DETAIL.VDI_NAME , VG_VDI_DETAIL.ODC_LOCATION , VG_VDI_DETAIL.STATUS ,VG_VDI_DETAIL.LWD"+
+   " FROM  \"VG_SOURCE\"  left join  \"VG_GAD_DATA\"   on  \"VG_SOURCE\".\"GGID\"  =  VG_GAD_DATA.GGID "+
+   " LEFT JOIN  \"VG_VDI_DETAIL\"  on  VG_GAD_DATA.GGID  =  VG_VDI_DETAIL.VDI_GGID ";
 
      public final String HC_REPORT_GENERATE_LOCATION= "C:/Users/dobanerj/Document/Report/HCReport.xlsx";   
      

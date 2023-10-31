@@ -32,8 +32,9 @@ public class ReportUtilHelper {
 		List<ReportHelper> listOfReport = new ArrayList<>(); 
 		ReportHelper helper = null;
 		try{
-			connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "admin");
+			connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/ReportAutomation", "postgres", "admin");
 			stmt = connection.createStatement();
+            System.out.println(ReportUtil.query);
 			ResultSet rs = stmt.executeQuery(ReportUtil.query);
 			while(rs.next()){
 				helper = new ReportHelper();
