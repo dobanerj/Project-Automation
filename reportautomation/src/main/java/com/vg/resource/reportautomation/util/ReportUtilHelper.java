@@ -41,8 +41,8 @@ public class ReportUtilHelper {
 			ResultSet rs = stmt.executeQuery(ReportUtil.query);
 			while(rs.next()){
 				helper = new ReportHelper();
-				helper.setGgid(rs.getString("ggid"));
-                helper.setLi_lr_id(rs.getString("li_lr_id"));
+				helper.setGgid(rs.getString("GGID"));
+                helper.setLi_lr_id(rs.getString("LI_LR_ID"));
                 helper.setPer_nr(rs.getDouble("per_nr"));
                 helper.setLocal_grade(rs.getString("local_grade"));
                 helper.setRegion(rs.getString("region"));
