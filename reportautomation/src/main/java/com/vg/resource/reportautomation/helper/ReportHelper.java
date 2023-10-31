@@ -42,7 +42,6 @@ public class ReportHelper {
 	private String sow_end_date;
 	private String de_name;
 	private String em_name;
-	private String portfolio;
 	private String exhibit_type;
 	private String resource_type;
 	private String payment_type;

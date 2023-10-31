@@ -138,7 +138,7 @@ public class ReportService {
 			dataRow.createCell(colNo++).setCellValue(excel1.getDe_name());
 			dataRow.createCell(colNo++).setCellValue(excel1.getEm_name());
 			dataRow.createCell(colNo++).setCellValue(excel1.getStatus());
-			dataRow.createCell(colNo++).setCellValue(excel1.getPortfolio());
+			dataRow.createCell(colNo++).setCellValue(excel1.getBu_portfolios());
 			dataRow.createCell(colNo++).setCellValue(excel1.getR2d2());
 		}
 		try 
