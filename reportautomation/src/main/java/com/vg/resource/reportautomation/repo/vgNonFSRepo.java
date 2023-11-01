@@ -8,7 +8,7 @@ import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 
 
 @Repository
-public interface vgNonFSRepo extends JpaRepository<VGNonFSEntity,Integer>{
+public interface vgNonFSRepo extends JpaRepository<VGNonFSEntity,String>{
 	
 
 }

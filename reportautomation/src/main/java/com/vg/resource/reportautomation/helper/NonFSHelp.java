@@ -60,24 +60,26 @@ public class NonFSHelp {
 
 				{
 
+
 					Cell cell = cells.next();
 					switch(cellId)
 					{
+					
 					case 0:
 						cell.setCellType(CellType.STRING);
-						noFSExceldata.setMonth(cell.getStringCellValue());
+						noFSExceldata.setEmpID(cell.getStringCellValue());
 						break;
 					case 1:
 						cell.setCellType(CellType.STRING);
-						noFSExceldata.setAccountName(cell.getStringCellValue());
-						break;
+						noFSExceldata.setMonth(cell.getStringCellValue());
+						break;	
 					case 2:
 						cell.setCellType(CellType.STRING);
-						noFSExceldata.setLob(cell.getStringCellValue());
+						noFSExceldata.setAccountName(cell.getStringCellValue());
 						break;
 					case 3:
-						cell.setCellType(CellType.NUMERIC);
-						noFSExceldata.setEmpID((int)cell.getNumericCellValue());
+						cell.setCellType(CellType.STRING);
+						noFSExceldata.setLob(cell.getStringCellValue());
 						break;
 					case 4:
 						cell.setCellType(CellType.STRING);

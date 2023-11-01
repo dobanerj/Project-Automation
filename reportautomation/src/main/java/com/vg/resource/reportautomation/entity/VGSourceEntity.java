@@ -30,7 +30,7 @@ public class VGSourceEntity implements Serializable{
 	@Column(name="\"PO\"")
 	private String po;
 	@Column(name="\"SOW_ID\"")
-	private String sowId;
+	private int sowId;
 	@Column(name="\"HOURS\"")
 	private String hours;
 	@Column(name="\"HOURLY_RATE\"")

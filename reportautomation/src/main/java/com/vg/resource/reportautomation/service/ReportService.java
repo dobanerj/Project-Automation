@@ -26,7 +26,8 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		File file = new File(ReportUtil.HC_REPORT_GENERATE_LOCATION);
+		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+	   // File file = new File(ReportUtil.HC_REPORT_LOCATION);	
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();
@@ -34,19 +35,16 @@ public class ReportService {
 		CellStyle styleORG=workbook.createCellStyle();
 	    Sheet sheet = workbook.createSheet("Data");
 		int colIndex = 0;
-	 	Row row=sheet.createRow(0);  
+		Row row=sheet.createRow(0);  
 
-	 	
 	 	ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_SR_NO);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CREW_ID);
-	 	
 		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_LI_LR_ID);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GG_ID);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_RESOURCE_NAME);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CAP_EMAIL_ID);
 		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VG_EMAIL);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CG_MANAGER);
-
 		ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VG_MANAGER);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LEVEL);
 		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GRADE_REVISED);
@@ -55,7 +53,6 @@ public class ReportService {
 		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_REGION_REVISED);
 		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_GAD_COST_CENTER);
 		ReportUtilHelper.createBlueCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PROJECT_CODE);
-
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PROJECT_NAME);
 		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_JOB_ROLE);
 		ReportUtilHelper.createRedCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SKILL);
@@ -64,7 +61,6 @@ public class ReportService {
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PO);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_NAME);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_ID);
-
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_START_DATE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_END_DATE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_EXHIBIT_TYPE);
@@ -72,7 +68,6 @@ public class ReportService {
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURS);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURLY_RATE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_AMOUNT);
-
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_START_DATE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_END_DATE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCATION);
@@ -80,7 +75,6 @@ public class ReportService {
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_TOTAL_CONTRACT_AMOUNT);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PAYMENT_TYPE);
 		ReportUtilHelper.createRedCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_COMMENT);
-
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SBU);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LOB);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_DE);
@@ -88,7 +82,11 @@ public class ReportService {
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_BU_PORTFOLIOS);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VDI_NAME);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_ODC_LOCATION);
+		
 		int index=1;
+		
 		int dataRowIndex =1 ;
 		 for (ReportHelper excel1 : data){
 			int colNo =0;
@@ -140,6 +138,8 @@ public class ReportService {
 			dataRow.createCell(colNo++).setCellValue(excel1.getStatus());
 			dataRow.createCell(colNo++).setCellValue(excel1.getBu_portfolios());
 			dataRow.createCell(colNo++).setCellValue(excel1.getR2d2());
+			dataRow.createCell(colNo++).setCellValue(excel1.getVdi_name());
+			dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());
 		}
 		try 
 		 {	
