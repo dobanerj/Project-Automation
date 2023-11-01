@@ -71,7 +71,13 @@ public class ReportUtilHelper {
                 helper.setDe_name(rs.getString("DE"));
                 helper.setEm_name(rs.getString("EM"));
                 helper.setVg_email(rs.getString("VG_EMAIL_ID"));
+                helper.setCap_email(rs.getString("CAP_EMAIL_ID"));
                 helper.setVdi_name(rs.getString("VDI_NAME"));
+                helper.setCostcenter(rs.getString("GAD_COST_CENTER"));
+                helper.setRegion_revised(rs.getString("REGION_REVISED"));
+                helper.setGrade_revised(rs.getString("GRADE_REVISED"));
+                helper.setProject_Code(rs.getString("PROJECT_CODE"));
+                helper.setOdc_location(rs.getString("ODC_LOCATION"));
 				listOfReport.add(helper);
 				
 			}
@@ -88,21 +94,24 @@ public class ReportUtilHelper {
 
 public static Cell createRedCell(int cellNo,Row row,CellStyle style){			
 			style.setFillBackgroundColor(IndexedColors.RED1.getIndex()); 
-            style.setFillPattern(FillPatternType.DIAMONDS);               
+            style.setFillPattern(FillPatternType.DIAMONDS); 
+            style.setWrapText(true);               
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 } 
 public static Cell createBlueCell(int cellNo,Row row,CellStyle style){			
 			style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());  
-            style.setFillPattern(FillPatternType.DIAMONDS);               
+            style.setFillPattern(FillPatternType.DIAMONDS);   
+            style.setWrapText(true);            
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 }
 public static Cell createOrangeCell(int cellNo,Row row,CellStyle style){			
             style.setFillBackgroundColor(IndexedColors.GOLD.getIndex()); 
-            style.setFillPattern(FillPatternType.DIAMONDS);               
+            style.setFillPattern(FillPatternType.DIAMONDS);  
+            style.setWrapText(true);              
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;

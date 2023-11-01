@@ -1,14 +1,12 @@
 package com.vg.resource.reportautomation.service;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.File;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -84,6 +82,8 @@ public class ReportService {
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_BU_PORTFOLIOS);
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VDI_NAME);
+		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_ODC_LOCATION);
 		
 		int index=1;
 		
@@ -138,6 +138,8 @@ public class ReportService {
 			dataRow.createCell(colNo++).setCellValue(excel1.getStatus());
 			dataRow.createCell(colNo++).setCellValue(excel1.getBu_portfolios());
 			dataRow.createCell(colNo++).setCellValue(excel1.getR2d2());
+			dataRow.createCell(colNo++).setCellValue(excel1.getVdi_name());
+			dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());
 		}
 		try 
 		 {	

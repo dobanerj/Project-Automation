@@ -4,7 +4,8 @@ public interface ReportUtil {
 	public final String query="SELECT Distinct  \"VG_GAD_DATA\".\"LI_LR_ID\" , \"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ," +
 		    "\"VG_GAD_DATA\".\"GRADE_REVISED\" ,\"VG_GAD_DATA\".\"LOCAL_GRADE\" , \"VG_GAD_DATA\".\"REGION\" , \"VG_GAD_DATA\".\"REGION_REVISED\","+
 		    "\"VG_GAD_DATA\".\"GAD_COST_CENTER\" ,\"VG_GAD_DATA\".\"PROJECT_CODE\" ,\"VG_GAD_DATA\".\"PROJECT_NAME\", \"VG_GAD_DATA\".\"PRACTICE\","+
-			//"\"VG_GAD_DATA\".\"SUB_PRACTICE\" ,
+			
+            //"\"VG_GAD_DATA\".\"SUB_PRACTICE\" ,
             "\"VG_GAD_DATA\".\"BU_PORTFOLIO\",\"VG_GAD_DATA\".\"CURRENT_STATUS\","+
             "\"VG_GAD_DATA\".\"SBU\" ,\"VG_GAD_DATA\".\"LOB\" ,\"VG_GAD_DATA\".\"DE\" ,\"VG_GAD_DATA\".\"EM\",  \"VG_GAD_DATA\".\"END_DATE_R2D2\",\"VG_SOURCE\".\"GGID\" , \"VG_SOURCE\".\"AMOUNT\", "+
 		    "\"VG_SOURCE\".\"COMMENTS\" ,\"VG_SOURCE\".\"HOURLY_RATE\" , \"VG_SOURCE\".\"HOURS\" , \"VG_SOURCE\".\"JOB_ROLE\" ," +
@@ -62,4 +63,6 @@ public interface ReportUtil {
     public final String HC_REPORT_CURRENT_STATUS= "CURRENT STATUS"; 
     public final String HC_REPORT_BU_PORTFOLIOS= "BU PORTFOLIOS"; 
     public final String HC_REPORT_END_DATE_R2D2= "END DATE R2D2"; 
+    public final String HC_REPORT_VDI_NAME= "VDI NAME"; 
+    public final String HC_REPORT_ODC_LOCATION= "ODC LOCATION"; 
 } 
