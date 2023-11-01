@@ -8,11 +8,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Color;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
 import com.vg.resource.reportautomation.helper.ReportHelper;
 
@@ -78,6 +82,8 @@ public class ReportUtilHelper {
                 helper.setGrade_revised(rs.getString("GRADE_REVISED"));
                 helper.setProject_Code(rs.getString("PROJECT_CODE"));
                 helper.setOdc_location(rs.getString("ODC_LOCATION"));
+                helper.setExhibit_type(rs.getString("EXHIBIT TYPE"));
+                helper.setResource_type(rs.getString("RESOURCE TYPE"));
 				listOfReport.add(helper);
 				
 			}
@@ -92,27 +98,36 @@ public class ReportUtilHelper {
 		return listOfReport;
 	}
 
-public static Cell createRedCell(int cellNo,Row row,CellStyle style){			
-			style.setFillBackgroundColor(IndexedColors.RED1.getIndex()); 
-            style.setFillPattern(FillPatternType.DIAMONDS); 
-            style.setWrapText(true);               
+public static Cell createSrcCell(int cellNo,Row row,CellStyle style){			
+			style.setFillBackgroundColor(IndexedColors.RED1.index); 
+            style.setFillPattern(FillPatternType.DIAMONDS);             
+            style.setBorderBottom(BorderStyle.THICK);
+            style.setBorderLeft(BorderStyle.THICK);
+            style.setBorderTop(BorderStyle.THICK);
+            style.setBorderRight(BorderStyle.THICK);
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 } 
-public static Cell createBlueCell(int cellNo,Row row,CellStyle style){			
-			style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());  
-            style.setFillPattern(FillPatternType.DIAMONDS);   
-            style.setWrapText(true);            
+public static Cell createGadCell(int cellNo,Row row,CellStyle style){			
+			style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.index);  
+            style.setFillPattern(FillPatternType.DIAMONDS);              
+            style.setBorderBottom(BorderStyle.THICK);
+            style.setBorderLeft(BorderStyle.THICK);
+            style.setBorderTop(BorderStyle.THICK);
+            style.setBorderRight(BorderStyle.THICK);
             Cell cell=row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 }
 public static Cell createOrangeCell(int cellNo,Row row,CellStyle style){			
-            style.setFillBackgroundColor(IndexedColors.GOLD.getIndex()); 
-            style.setFillPattern(FillPatternType.DIAMONDS);  
-            style.setWrapText(true);              
-            Cell cell=row.createCell(cellNo); 
+            style.setFillBackgroundColor(IndexedColors.GOLD.index); 
+            style.setFillPattern(FillPatternType.DIAMONDS); 
+            style.setBorderBottom(BorderStyle.THICK);
+            style.setBorderLeft(BorderStyle.THICK);
+            style.setBorderTop(BorderStyle.THICK);
+            style.setBorderRight(BorderStyle.THICK);
+            XSSFCell cell=(XSSFCell) row.createCell(cellNo); 
             cell.setCellStyle(style);   
 			return cell;
 }
