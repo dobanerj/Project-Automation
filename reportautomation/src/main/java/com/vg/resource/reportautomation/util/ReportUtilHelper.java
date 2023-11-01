@@ -41,32 +41,38 @@ public class ReportUtilHelper {
 				helper = new ReportHelper();
 				helper.setGgid(rs.getString("GGID"));
                 helper.setLi_lr_id(rs.getString("LI_LR_ID"));
-                helper.setPer_nr(rs.getDouble("per_nr"));
-                helper.setLocal_grade(rs.getString("local_grade"));
-                helper.setRegion(rs.getString("region"));
-                helper.setProject_name(rs.getString("project_name"));
-                helper.setPractice(rs.getString("practice"));
-                helper.setSub_practice(rs.getString("sub_practice"));
-                helper.setBu_portfolios(rs.getString("bu_portfolios"));
-
-                helper.setAmount(rs.getString("amount"));
-                helper.setComment(rs.getString("comment"));
-                helper.setHourly_rate(rs.getString("hourly_rate"));
-                helper.setHours(rs.getString("hours"));
-                helper.setJob_role(rs.getString("job_role"));
-                helper.setLevel(rs.getString("level"));
-                helper.setPo(rs.getString("po"));
-
-                helper.setPrimaryskill(rs.getString("primaryskill"));
-                helper.setResource_name(rs.getString("resource_name"));
-                helper.setRole_end_date(rs.getString("role_end_date"));
-                helper.setRole_start_date(rs.getString("role_start_date"));
-                helper.setSow_id(rs.getString("sow_id"));
-                helper.setStatus(rs.getString("status"));
-                helper.setTotal_contract_amount(rs.getString("total_contract_amount"));
-                ((ReportHelper) helper).setVgcrew_id(rs.getDouble("vgcrew_id"));
+                //helper.setPer_nr(rs.getDouble("PERNR"));
+                helper.setLocal_grade(rs.getString("LOCAL_GRADE"));
+                helper.setRegion(rs.getString("REGION"));
+                helper.setProject_name(rs.getString("PROJECT_NAME"));
+                helper.setPractice(rs.getString("PRACTICE"));
+                //helper.setSub_practice(rs.getString("SUB_PRACTICE"));
+                helper.setBu_portfolios(rs.getString("BU_PORTFOLIO"));
+ 
+ 
+                helper.setAmount(rs.getString("AMOUNT"));
+                helper.setComment(rs.getString("COMMENTS"));
+                helper.setHourly_rate(rs.getString("HOURLY_RATE"));
+                helper.setHours(rs.getString("HOURS"));
+                helper.setJob_role(rs.getString("JOB_ROLE"));
+                helper.setLevel(rs.getString("LEVEL"));
+                helper.setPo(rs.getString("PO"));
+ 
+ 
+                helper.setPrimaryskill(rs.getString("PRIMARY_SKILL"));
+                helper.setResource_name(rs.getString("RESOURCE_NAME"));
+                helper.setRole_end_date(rs.getString("ROLE_END_DATE"));
+                helper.setRole_start_date(rs.getString("ROLE_START_DATE"));
+                helper.setSow_id(rs.getString("SOW_ID"));
+                helper.setStatus(rs.getString("CURRENT_STATUS"));
+                helper.setTotal_contract_amount(rs.getString("TOTAL_CONTRACT_AMOUNT"));
+                helper.setVgcrew_id(rs.getDouble("VG_CREW_ID"));
+                helper.setLob(rs.getString("LOB"));
+                helper.setDe_name(rs.getString("DE"));
+                helper.setEm_name(rs.getString("EM"));
+                helper.setVg_email(rs.getString("VG_EMAIL_ID"));
+                helper.setVdi_name(rs.getString("VDI_NAME"));
 				listOfReport.add(helper);
-				
 				
 			}
 		}catch(SQLException e){

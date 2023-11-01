@@ -28,8 +28,8 @@ public class ReportService {
 		List<ReportHelper> data = ReportUtilHelper.readPostgres();
 		FileOutputStream outputStream = null;
 	    try (Workbook workbook = new XSSFWorkbook()) {
-		//File file = new File("C:/Users/SGHOSH31/Documents/Report/HCReport.xlsx");
-	    File file = new File(ReportUtil.HC_REPORT_LOCATION);	
+		File file = new File("C:/Users/dobanerj/Documents/Report/HCReport.xlsx");
+	   // File file = new File(ReportUtil.HC_REPORT_LOCATION);	
 		file.getParentFile().mkdirs(); // Will create parent directories if not exists
 		file.createNewFile();	
 		CellStyle style=workbook.createCellStyle();
@@ -86,9 +86,10 @@ public class ReportService {
 		ReportUtilHelper.createBlueCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
 		
 		int index=1;
-		int colNo =0;
+		
 		int dataRowIndex =1 ;
 		 for (ReportHelper excel1 : data){
+			int colNo =0;
 			Row dataRow=sheet.createRow(dataRowIndex++);
 			dataRow.createCell(colNo++).setCellValue(index++);
 			dataRow.createCell(colNo++).setCellValue(excel1.getVgcrew_id());

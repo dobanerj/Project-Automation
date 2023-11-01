@@ -53,36 +53,34 @@ public class VGVdiDetailHelper {
 					Cell cell = cells.next();
 					switch(cellId)
 					{
-					
-					case 0:
-						cell.setCellType(CellType.STRING);					
-							vdidata.setVdi_ggid(cell.getStringCellValue());
-						break;
 					case 1:
 						cell.setCellType(CellType.STRING);				
 						vdidata.setId(cell.getStringCellValue());
 						break;
 					case 2:
-						cell.setCellType(CellType.STRING);
-						vdidata.setResource_name(cell.getStringCellValue());
-						break;
+						cell.setCellType(CellType.STRING);					
+							vdidata.setVdi_ggid(cell.getStringCellValue());
+						break;					
 					case 3:
+						vdidata.setResource_name(cell.getStringCellValue());
+						break;					
+					case 4:
 						vdidata.setVg_email_id(cell.getStringCellValue());
 						break;
-					case 4:
+					case 5:
 						vdidata.setVdi_name(cell.getStringCellValue());
 						break;
-					case 5:
+					case 6:
 						vdidata.setOdc_location(cell.getStringCellValue());
 						break;
-					case 6:
+					case 7:
 						vdidata.setStatus(cell.getStringCellValue());
 						break;
-					case 7:
+					case 8:
 						cell.setCellType(CellType.NUMERIC);
 						vdidata.setLwd(cell.getDateCellValue());
 						break;
-					case 8:
+					case 9:
 						vdidata.setComments(cell.getStringCellValue());
 						break;
 					
