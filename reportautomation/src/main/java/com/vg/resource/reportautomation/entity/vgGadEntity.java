@@ -36,8 +36,8 @@ public class vgGadEntity {
 	private String projectName;
 	@Column(name="\"PRACTICE\"")
 	private String practice;
-	@Column(name="\"SUB_PROJECT\"")
-	private String subproject;
+	@Column(name="\"SUB_PRACTICE\"")
+    private String subPractise;
 	@Column(name="\"SBU\"")
 	private String sbu;
 	@Column(name="\"FS_NON_FS\"")
@@ -53,6 +53,8 @@ public class vgGadEntity {
 	@Column(name="\"CURRENT_STATUS\"")
 	private String currentStatus;
 	@Column(name="\"END_DATE_R2D2\"")
-	private String endDateR2d2;
+	private String endDateR2d2;	
+	@Column(name="\"LOCATION\"")
+    private String location;
 	
 }

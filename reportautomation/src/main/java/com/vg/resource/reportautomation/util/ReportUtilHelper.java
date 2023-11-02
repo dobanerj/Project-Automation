@@ -31,7 +31,6 @@ public class ReportUtilHelper {
 			e.printStackTrace();
 			
 		}
-		System.out.println("psql driver success!");
 		Connection connection = null;
 		Statement stmt = null;
 		List<ReportHelper> listOfReport = new ArrayList<>(); 
@@ -50,19 +49,15 @@ public class ReportUtilHelper {
                 helper.setRegion(rs.getString("REGION"));
                 helper.setProject_name(rs.getString("PROJECT_NAME"));
                 helper.setPractice(rs.getString("PRACTICE"));
-                //helper.setSub_practice(rs.getString("SUB_PRACTICE"));
-                helper.setBu_portfolios(rs.getString("BU_PORTFOLIO"));
- 
- 
+                helper.setSub_practice(rs.getString("SUB_PRACTICE"));
+                helper.setBu_portfolios(rs.getString("BU_PORTFOLIO")); 
                 helper.setAmount(rs.getString("AMOUNT"));
                 helper.setComment(rs.getString("COMMENTS"));
                 helper.setHourly_rate(rs.getString("HOURLY_RATE"));
                 helper.setHours(rs.getString("HOURS"));
                 helper.setJob_role(rs.getString("JOB_ROLE"));
                 helper.setLevel(rs.getString("LEVEL"));
-                helper.setPo(rs.getString("PO"));
- 
- 
+                helper.setPo(rs.getString("PO")); 
                 helper.setPrimaryskill(rs.getString("PRIMARY_SKILL"));
                 helper.setResource_name(rs.getString("RESOURCE_NAME"));
                 helper.setRole_end_date(rs.getString("ROLE_END_DATE"));
@@ -84,6 +79,12 @@ public class ReportUtilHelper {
                 helper.setOdc_location(rs.getString("ODC_LOCATION"));
                 helper.setExhibit_type(rs.getString("EXHIBIT TYPE"));
                 helper.setResource_type(rs.getString("RESOURCE TYPE"));
+                helper.setPayment_type(rs.getString("PAYMENT TYPE"));
+                helper.setSow_start_date(rs.getString("SOW_START_DATE"));
+                helper.setSow_end_date(rs.getString("SOW_END_DATE"));
+                helper.setLocation(rs.getString("LOCATION"));
+                helper.setSbu(rs.getString("SBU"));
+                helper.setSow_name(rs.getString("SOW_NAME"));
 				listOfReport.add(helper);
 				
 			}

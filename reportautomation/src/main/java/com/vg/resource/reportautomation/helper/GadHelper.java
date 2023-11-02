@@ -108,40 +108,44 @@ public class GadHelper {
 						break;
 					case 11:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setSubproject(cell.getStringCellValue());
+						VgGadExcel.setSbu(cell.getStringCellValue());
 						break;
 					case 12:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setSbu(cell.getStringCellValue());
+						VgGadExcel.setFs_non_fs(cell.getStringCellValue());
 						break;
 					case 13:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setFs_non_fs(cell.getStringCellValue());
+						VgGadExcel.setBuPortfolio(cell.getStringCellValue());
 						break;
 					case 14:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setBuPortfolio(cell.getStringCellValue());
+						VgGadExcel.setLob(cell.getStringCellValue());
 						break;
 					case 15:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setLob(cell.getStringCellValue());
+						VgGadExcel.setDe(cell.getStringCellValue());
 						break;
 					case 16:
 						cell.setCellType(CellType.STRING);
-						VgGadExcel.setDe(cell.getStringCellValue());
-						break;
-					case 17:
-						cell.setCellType(CellType.STRING);
 						VgGadExcel.setEm(cell.getStringCellValue());
 						break;	
-					case 18:
+					case 17:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setCurrentStatus(cell.getStringCellValue());
 						break;
-					case 19:
+					case 18:
 						cell.setCellType(CellType.STRING);
 						VgGadExcel.setEndDateR2d2(cell.getStringCellValue());
 						break;
+					case 19:
+						cell.setCellType(CellType.STRING);						
+						VgGadExcel.setSubPractise(cell.getStringCellValue());
+						break;
+					case 20:
+						cell.setCellType(CellType.STRING);						
+						VgGadExcel.setLocation(cell.getStringCellValue());
+						break;	
 					default:
 						break;
 					
