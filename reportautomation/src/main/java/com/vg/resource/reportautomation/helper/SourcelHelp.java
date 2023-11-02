@@ -105,12 +105,12 @@ public class SourcelHelp {
 						sourcedata.setAmount(cell.getStringCellValue());
 						break;
 					case 11:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setRoleStartDate(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						sourcedata.setRoleStartDate(cell.getDateCellValue());
 						break;
 					case 12:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setRoleEndDate(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);
+						sourcedata.setRoleEndDate(cell.getDateCellValue());
 						break;
 					case 13:
 						cell.setCellType(CellType.STRING);
