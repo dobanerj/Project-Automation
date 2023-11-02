@@ -116,18 +116,33 @@ public class SourcelHelp {
 						cell.setCellType(CellType.STRING);
 						sourcedata.setTotalContractAmount(cell.getStringCellValue());
 						break;
-					case 14:						
+					case 14:
+						cell.setCellType(CellType.STRING);						
 						sourcedata.setComment(cell.getStringCellValue());
 						break;
-					case 15:						
+					case 15:
+						cell.setCellType(CellType.STRING);						
 						sourcedata.setStatus(cell.getStringCellValue());
 						break;
-					case 16:						
+					case 16:
+						cell.setCellType(CellType.STRING);						
 						sourcedata.setExhibit_type(cell.getStringCellValue());
 						break;
-					case 17:						
+					case 17:
+						cell.setCellType(CellType.STRING);						
 						sourcedata.setResourc_type(cell.getStringCellValue());
-						break;		
+						break;	
+					case 18:
+						cell.setCellType(CellType.STRING);						
+						sourcedata.setSowStartDate(cell.getStringCellValue());
+						break;
+					case 19:
+						cell.setCellType(CellType.STRING);						
+						sourcedata.setSowEndDate(cell.getStringCellValue());
+						break;
+					case 20:						
+						sourcedata.setPaymentType(cell.getStringCellValue());
+						break;				
 					default:
 						break;
 					}

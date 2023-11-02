@@ -51,4 +51,10 @@ public class VGSourceEntity implements Serializable{
 	private String exhibit_type;
 	@Column(name="\"RESOURCE TYPE\"")
 	private String resourc_type;
+	@Column(name="\"PAYMENT TYPE\"")
+    private String paymentType;
+	@Column(name="\"SOW_START_DATE\"")
+	private String sowStartDate;
+	@Column(name="\"SOW_END_DATE\"")
+	private String sowEndDate;
 }
