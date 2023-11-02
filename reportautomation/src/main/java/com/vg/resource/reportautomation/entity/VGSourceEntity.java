@@ -47,4 +47,8 @@ public class VGSourceEntity implements Serializable{
 	private String comment;
 	@Column(name="\"STATUS\"")
 	private String status;
+	@Column(name="\"EXHIBIT TYPE\"")
+	private String exhibit_type;
+	@Column(name="\"RESOURCE TYPE\"")
+	private String resourc_type;
 }
