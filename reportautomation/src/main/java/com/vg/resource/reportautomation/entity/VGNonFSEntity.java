@@ -18,10 +18,11 @@ import lombok.Data;
 @Data
 public class VGNonFSEntity implements Serializable{
 	
-	@Id
+	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="\"VENDOR\"")
 	private Integer serialNo;
+	@Id
 	@Column(name="\"EMP_ID\"",unique=false)
 	private String empID;
 	@Column(name="\"MONTH\"")
