@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 import lombok.Data;
 @Data
@@ -38,9 +39,9 @@ public class VGSourceEntity implements Serializable{
 	@Column(name="\"AMOUNT\"")
 	private String amount;
 	@Column(name="\"ROLE_START_DATE\"")
-	private String roleStartDate;
+	private Date roleStartDate;
 	@Column(name="\"ROLE_END_DATE\"")
-	private String roleEndDate;
+	private Date roleEndDate;
 	@Column(name="\"TOTAL_CONTRACT_AMOUNT\"")
 	private String totalContractAmount;
 	@Column(name="\"COMMENTS\"")
