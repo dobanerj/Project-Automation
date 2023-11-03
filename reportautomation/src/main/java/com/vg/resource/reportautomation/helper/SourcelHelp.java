@@ -133,12 +133,12 @@ public class SourcelHelp {
 						sourcedata.setResourc_type(cell.getStringCellValue());
 						break;	
 					case 18:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setSowStartDate(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);						
+						sourcedata.setSowStartDate(cell.getDateCellValue());
 						break;
 					case 19:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setSowEndDate(cell.getStringCellValue());
+						cell.setCellType(CellType.NUMERIC);						
+						sourcedata.setSowEndDate(cell.getDateCellValue());
 						break;
 					case 20:						
 						sourcedata.setPaymentType(cell.getStringCellValue());

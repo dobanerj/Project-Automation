@@ -1,4 +1,6 @@
 package com.vg.resource.reportautomation.helper;
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -37,10 +39,9 @@ public class ReportHelper {
 	private String region_revised;
 	private String costcenter;
 	private String project_Code;
-	private String role;
 	private String sow_start_date;
 	private String sow_end_date;
-	private String de_name;
+	private String de;
 	private String em_name;
 	private String exhibit_type;
 	private String resource_type;
@@ -52,6 +53,25 @@ public class ReportHelper {
 	private String r2d2;
 	private String vdi_name;
 	private String odc_location;
+
+	private String EndDateR2D2;
+	private String vendor;
+	private String empID;
+	private String month;
+	private String accountName;
+	private String empName;
+	private String empEmailId;
+	private String empUserID;
+	private String designation;
+	private String projectcode ;
+	private String projectname;
+	private Date startDate;
+	private Date endDate;
+	private String revisedRegion;
+	private String lbs;
+	private String lwd;
+    private String gadCostCenter;
+    private String currentStatus;
 	
 
 

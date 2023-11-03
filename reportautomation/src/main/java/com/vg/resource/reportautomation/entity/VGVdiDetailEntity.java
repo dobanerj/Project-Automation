@@ -14,6 +14,7 @@ import lombok.Data;
 @Table(name = "\"VG_VDI_DETAIL\"")
 @Entity
 public class VGVdiDetailEntity implements Serializable{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="\"VENDOR\"")
@@ -36,6 +37,5 @@ public class VGVdiDetailEntity implements Serializable{
 	private Date lwd;
 	@Column(name="\"COMMENTS\"")
 	private String comments;
-	
 	
 }

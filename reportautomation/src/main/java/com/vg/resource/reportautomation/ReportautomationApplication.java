@@ -67,7 +67,8 @@ public class ReportautomationApplication implements CommandLineRunner{
 		
 	
 		try {
-			reportservice.generateExcel();
+			reportservice.generateFSExcel();
+			reportservice.generateNonFSExcel();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
