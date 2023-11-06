@@ -1,33 +1,34 @@
 package com.vg.resource.reportautomation.util;
 
 public interface ReportUtil {
-	public final String FSquery="SELECT Distinct  \"VG_GAD_DATA\".\"LI_LR_ID\" , \"SOW_MASTER\".\"SOW_NAME\",\"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ," +
+	public final String FSquery="SELECT Distinct  \"VG_GAD_DATA\".\"LI_LR_ID\" , \"SOW_MASTER\".\"SOW_NAME\",\"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ,\"VG_GAD_DATA\".\"CG MANAGER\" , " +
 			    "\"VG_GAD_DATA\".\"GRADE_REVISED\" ,\"VG_GAD_DATA\".\"LOCAL_GRADE\" , \"VG_GAD_DATA\".\"REGION\" , \"VG_GAD_DATA\".\"REGION_REVISED\","+
 			    "\"VG_GAD_DATA\".\"GAD_COST_CENTER\" ,\"VG_GAD_DATA\".\"PROJECT_CODE\" ,\"VG_GAD_DATA\".\"PROJECT_NAME\", \"VG_GAD_DATA\".\"PRACTICE\","+
 	            "\"VG_GAD_DATA\".\"SUB_PRACTICE\" ,\"VG_GAD_DATA\".\"LOCATION\",\"VG_GAD_DATA\".\"BU_PORTFOLIO\",\"VG_GAD_DATA\".\"CURRENT_STATUS\","+
 	            "\"VG_GAD_DATA\".\"SBU\" ,\"VG_GAD_DATA\".\"LOB\" ,\"VG_GAD_DATA\".\"DE\" ,\"VG_GAD_DATA\".\"EM\",  \"VG_GAD_DATA\".\"END_DATE_R2D2\",\"VG_SOURCE\".\"GGID\" , \"VG_SOURCE\".\"AMOUNT\", "+
-			    "\"VG_SOURCE\".\"COMMENTS\" ,\"VG_SOURCE\".\"HOURLY_RATE\" , \"VG_SOURCE\".\"HOURS\" , \"VG_SOURCE\".\"JOB_ROLE\" ," +
+			    "\"VG_SOURCE\".\"COMMENTS\" ,\"VG_SOURCE\".\"HOURLY_RATE\" , \"VG_SOURCE\".\"HOURS\" , \"VG_SOURCE\".\"JOB_ROLE\" ,\"VG_SOURCE\".\"VG LOCATION\"," +
 			    "\"VG_SOURCE\".\"PAYMENT TYPE\",\"VG_SOURCE\".\"SOW_START_DATE\",\"VG_SOURCE\".\"SOW_END_DATE\",\"VG_SOURCE\".\"LEVEL\" ,\"VG_SOURCE\".\"PO\" ,\"VG_SOURCE\".\"PRIMARY_SKILL\" , \"VG_SOURCE\".\"RESOURCE_NAME\" ,\"VG_SOURCE\".\"ROLE_END_DATE\" ,"+
-			    " \"VG_SOURCE\".\"EXHIBIT TYPE\",\"VG_SOURCE\".\"RESOURCE TYPE\",\"VG_SOURCE\".\"VG_CREW_ID\" , \"VG_SOURCE\".\"SOW_ID\",\"VG_SOURCE\".\"TOTAL_CONTRACT_AMOUNT\" ,\"VG_SOURCE\".\"ROLE_START_DATE\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
+			    "\"VG_SOURCE\".\"EXHIBIT TYPE\",\"VG_SOURCE\".\"RESOURCE TYPE\",\"VG_SOURCE\".\"VG_CREW_ID\" , \"VG_SOURCE\".\"SOW_ID\",\"VG_SOURCE\".\"TOTAL_CONTRACT_AMOUNT\" ,\"VG_SOURCE\".\"ROLE_START_DATE\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
 				"\"VG_VDI_DETAIL\".\"VDI_NAME\" , \"VG_VDI_DETAIL\".\"ODC_LOCATION\", \"VG_VDI_DETAIL\".\"STATUS\", \"VG_VDI_DETAIL\".\"LWD\" "+
 			   " FROM  \"VG_SOURCE\"  left join  \"VG_GAD_DATA\"   on  \"VG_SOURCE\".\"GGID\"  =  \"VG_GAD_DATA\".\"GGID\" "+
 			   " LEFT JOIN  \"VG_VDI_DETAIL\"  on  \"VG_GAD_DATA\".\"GGID\"  = \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
 	           " JOIN \"SOW_MASTER\" on \"SOW_MASTER\".\"SOW_ID\" =  \"VG_SOURCE\".\"SOW_ID\" ";
 	
-		public final String NonFsquery="SELECT Distinct  \"VG_GAD_DATA\".\"LI_LR_ID\"," +
-			    "\"VG_GAD_DATA\".\"GRADE_REVISED\" ,\"VG_GAD_DATA\".\"LOCAL_GRADE\" , \"VG_GAD_DATA\".\"REGION\" , \"VG_GAD_DATA\".\"REGION_REVISED\",\"VG_GAD_DATA\".\"GGID\","+
+		public final String NonFsquery="SELECT Distinct \"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ,\"VG_GAD_DATA\".\"CG MANAGER\" ,"+
+				
+			    "\"VG_GAD_DATA\".\"GRADE_REVISED\" ,\"VG_GAD_DATA\".\"LOCAL_GRADE\" , \"VG_GAD_DATA\".\"REGION\" , \"VG_GAD_DATA\".\"REGION_REVISED\",\"VG_GAD_DATA\".\"GGID\",\"VG_GAD_DATA\".\"CG MANAGER\","+
 			    "\"VG_GAD_DATA\".\"GAD_COST_CENTER\" ,\"VG_GAD_DATA\".\"PROJECT_CODE\" ,\"VG_GAD_DATA\".\"PROJECT_NAME\", \"VG_GAD_DATA\".\"PRACTICE\","+
 	            "\"VG_GAD_DATA\".\"SUB_PRACTICE\" ,\"VG_GAD_DATA\".\"LOCATION\",\"VG_GAD_DATA\".\"BU_PORTFOLIO\",\"VG_GAD_DATA\".\"CURRENT_STATUS\","+
 	            "\"VG_GAD_DATA\".\"SBU\" ,\"VG_GAD_DATA\".\"LOB\" ,\"VG_GAD_DATA\".\"DE\" ,\"VG_GAD_DATA\".\"EM\",  \"VG_GAD_DATA\".\"END_DATE_R2D2\", "+
 			    "\"VG_NON_FS_MASTER_DATA\".\"VENDOR\" ,\"VG_NON_FS_MASTER_DATA\".\"EMP_ID\" , \"VG_NON_FS_MASTER_DATA\".\"MONTH\" , \"VG_NON_FS_MASTER_DATA\".\"ACCOUNT_NAME\" ," +
 			    "\"VG_NON_FS_MASTER_DATA\".\"EMP_NAME\",\"VG_NON_FS_MASTER_DATA\".\"EMP_EMAIL_ID\",\"VG_NON_FS_MASTER_DATA\".\"EMP_USER_ID\",\"VG_NON_FS_MASTER_DATA\".\"DESIGNATION\" ,\"VG_NON_FS_MASTER_DATA\".\"PROJECT_CODE\" ,\"VG_NON_FS_MASTER_DATA\".\"PROJECT_NAME\" , \"VG_NON_FS_MASTER_DATA\".\"START_DATE\" ,\"VG_NON_FS_MASTER_DATA\".\"END_DATE\" ,"+
-			    " \"VG_NON_FS_MASTER_DATA\".\"REGION\",\"VG_NON_FS_MASTER_DATA\".\"LOCATION\",\"VG_NON_FS_MASTER_DATA\".\"REVISED_REGION\" , \"VG_NON_FS_MASTER_DATA\".\"IBS\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
+			    " \"VG_NON_FS_MASTER_DATA\".\"REGION\",\"VG_NON_FS_MASTER_DATA\".\"VG LOCATION\",\"VG_NON_FS_MASTER_DATA\".\"REVISED_REGION\" , \"VG_NON_FS_MASTER_DATA\".\"IBS\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
 				"\"VG_VDI_DETAIL\".\"VDI_NAME\" , \"VG_VDI_DETAIL\".\"ODC_LOCATION\", \"VG_VDI_DETAIL\".\"STATUS\", \"VG_VDI_DETAIL\".\"LWD\" "+
 			   " FROM  \"VG_GAD_DATA\"  left join  \"VG_VDI_DETAIL\"   on  \"VG_GAD_DATA\".\"GGID\"  =  \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
 			   " LEFT JOIN  \"VG_NON_FS_MASTER_DATA\"  on  \"VG_NON_FS_MASTER_DATA\".\"EMP_ID\"  = \"VG_GAD_DATA\".\"LI_LR_ID\" ";
 
 
-	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Users/SGHOSH31/Documents/Report/HCReport.xlsx";   
+	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Users/dobanerj/Documents/Report/HCReport.xlsx";   
 	    public final String HC_REPORT_SR_NO= "SR.No";
 	    public final String HC_REPORT_CREW_ID= "CREWId";  
 	    public final String HC_REPORT_LI_LR_ID= "LI/LRID"; 
@@ -70,13 +71,9 @@ public interface ReportUtil {
 	    public final String HC_REPORT_LOB= "LOB"; 
 	    public final String HC_REPORT_DE= "DE";
 	    public final String HC_REPORT_EM= "EM"; 
-	    public final String HC_REPORT_CURRENT_STATUS= "CURRENT STATUS"; 
 	    public final String HC_REPORT_BU_PORTFOLIOS= "BU PORTFOLIOS"; 
-	    public final String HC_REPORT_END_DATE_R2D2= "END DATE R2D2"; 
 	    public final String HC_REPORT_VDI_NAME= "VDI NAME"; 
 	    public final String HC_REPORT_ODC_LOCATION= "ODC LOCATION"; 
-	    public final String HC_REPORT_VENDOR= "VENDOR"; 
-	    public final String HC_REPORT_EMP_ID= "EMP ID"; 
 	    public final String HC_REPORT_MONTH= "MONTH"; 
 	    public final String HC_REPORT_ACCOUNT_NAME= "ACCOUNT NAME"; 
 	    public final String HC_REPORT_LWD= "LWD"; 

@@ -58,4 +58,6 @@ public class VGSourceEntity implements Serializable{
 	private Date sowStartDate;
 	@Column(name="\"SOW_END_DATE\"")
 	private Date sowEndDate;
+	@Column(name="\"VG LOCATION\"")
+	private String locationVg;
 }

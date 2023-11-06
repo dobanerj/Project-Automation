@@ -49,7 +49,7 @@ public class VGNonFSEntity implements Serializable{
 	private Date endDate;
 	@Column(name="\"REGION\"")
 	private String region;
-	@Column(name="\"LOCATION\"")
+	@Column(name="\"VG LOCATION\"")
 	private String location;
 	@Column(name="\"REVISED_REGION\"")
 	private String revisedRegion;

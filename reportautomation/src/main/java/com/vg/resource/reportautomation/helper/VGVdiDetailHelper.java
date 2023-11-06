@@ -44,7 +44,7 @@ public class VGVdiDetailHelper {
 					continue;
 				}
 				Iterator<Cell> cells = row.iterator();
-				int cellId = 0;
+				int cellId = 1;
 				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();
 				while(cells.hasNext())
 

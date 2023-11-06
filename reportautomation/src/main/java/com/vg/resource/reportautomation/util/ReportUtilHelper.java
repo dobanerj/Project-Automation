@@ -11,12 +11,10 @@ import java.util.List;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Color;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
 import com.vg.resource.reportautomation.helper.ReportHelper;
 
@@ -38,52 +36,52 @@ public class ReportUtilHelper {
 			connection = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/ReportAutomation", "postgres", "admin");
 			stmt = connection.createStatement();
             System.out.println(ReportUtil.FSquery);
-			ResultSet Fsrs = stmt.executeQuery(ReportUtil.FSquery);
-			while(Fsrs.next()){
+			ResultSet fsRs = stmt.executeQuery(ReportUtil.FSquery);
+			while(fsRs.next()){
 				helper = new ReportHelper();
-				helper.setGgid(Fsrs.getString("GGID"));
-                helper.setLi_lr_id(Fsrs.getString("LI_LR_ID"));
-                //helper.setPer_nr(rs.getDouble("PERNR"));
-                helper.setLocal_grade(Fsrs.getString("LOCAL_GRADE"));
-                helper.setRegion(Fsrs.getString("REGION"));
-                helper.setProject_name(Fsrs.getString("PROJECT_NAME"));
-                helper.setPractice(Fsrs.getString("PRACTICE"));
-                helper.setSub_practice(Fsrs.getString("SUB_PRACTICE"));
-                helper.setBu_portfolios(Fsrs.getString("BU_PORTFOLIO")); 
-                helper.setAmount(Fsrs.getString("AMOUNT"));
-                helper.setComment(Fsrs.getString("COMMENTS"));
-                helper.setHourly_rate(Fsrs.getString("HOURLY_RATE"));
-                helper.setHours(Fsrs.getString("HOURS"));
-                helper.setJob_role(Fsrs.getString("JOB_ROLE"));
-                helper.setLevel(Fsrs.getString("LEVEL"));
-                helper.setPo(Fsrs.getString("PO")); 
-                helper.setPrimaryskill(Fsrs.getString("PRIMARY_SKILL"));
-                helper.setResource_name(Fsrs.getString("RESOURCE_NAME"));
-                helper.setRole_end_date(Fsrs.getString("ROLE_END_DATE"));
-                helper.setRole_start_date(Fsrs.getString("ROLE_START_DATE"));
-                helper.setSow_id(Fsrs.getString("SOW_ID"));
-                helper.setStatus(Fsrs.getString("CURRENT_STATUS"));
-                helper.setTotal_contract_amount(Fsrs.getString("TOTAL_CONTRACT_AMOUNT"));
-                helper.setVgcrew_id(Fsrs.getDouble("VG_CREW_ID"));
-                helper.setLob(Fsrs.getString("LOB"));
-                helper.setDe(Fsrs.getString("DE"));
-                helper.setEm_name(Fsrs.getString("EM"));
-                helper.setVg_email(Fsrs.getString("VG_EMAIL_ID"));
-                helper.setCap_email(Fsrs.getString("CAP_EMAIL_ID"));
-                helper.setVdi_name(Fsrs.getString("VDI_NAME"));
-                helper.setCostcenter(Fsrs.getString("GAD_COST_CENTER"));
-                helper.setRegion_revised(Fsrs.getString("REGION_REVISED"));
-                helper.setGrade_revised(Fsrs.getString("GRADE_REVISED"));
-                helper.setProject_Code(Fsrs.getString("PROJECT_CODE"));
-                helper.setOdc_location(Fsrs.getString("ODC_LOCATION"));
-                helper.setExhibit_type(Fsrs.getString("EXHIBIT TYPE"));
-                helper.setResource_type(Fsrs.getString("RESOURCE TYPE"));
-                helper.setPayment_type(Fsrs.getString("PAYMENT TYPE"));
-                helper.setSow_start_date(Fsrs.getString("SOW_START_DATE"));
-                helper.setSow_end_date(Fsrs.getString("SOW_END_DATE"));
-                helper.setLocation(Fsrs.getString("LOCATION"));
-                helper.setSbu(Fsrs.getString("SBU"));
-                helper.setSow_name(Fsrs.getString("SOW_NAME"));
+				helper.setGgid(fsRs.getString("GGID"));
+                helper.setLi_lr_id(fsRs.getString("LI_LR_ID"));
+                helper.setLocal_grade(fsRs.getString("LOCAL_GRADE"));
+                helper.setRegion(fsRs.getString("REGION"));
+                helper.setProject_name(fsRs.getString("PROJECT_NAME"));
+                helper.setPractice(fsRs.getString("PRACTICE"));
+                helper.setSub_practice(fsRs.getString("SUB_PRACTICE"));
+                helper.setBu_portfolios(fsRs.getString("BU_PORTFOLIO")); 
+                helper.setAmount(fsRs.getString("AMOUNT"));
+                helper.setComment(fsRs.getString("COMMENTS"));
+                helper.setHourly_rate(fsRs.getString("HOURLY_RATE"));
+                helper.setHours(fsRs.getString("HOURS"));
+                helper.setJob_role(fsRs.getString("JOB_ROLE"));
+                helper.setLevel(fsRs.getString("LEVEL"));
+                helper.setPo(fsRs.getString("PO")); 
+                helper.setPrimaryskill(fsRs.getString("PRIMARY_SKILL"));
+                helper.setResource_name(fsRs.getString("RESOURCE_NAME"));
+                helper.setRole_end_date(fsRs.getString("ROLE_END_DATE"));
+                helper.setRole_start_date(fsRs.getString("ROLE_START_DATE"));
+                helper.setSow_id(fsRs.getString("SOW_ID"));
+                helper.setTotal_contract_amount(fsRs.getString("TOTAL_CONTRACT_AMOUNT"));
+                helper.setVgcrew_id(fsRs.getDouble("VG_CREW_ID"));
+                helper.setLob(fsRs.getString("LOB"));
+                helper.setDe(fsRs.getString("DE"));
+                helper.setEm_name(fsRs.getString("EM"));
+                helper.setVg_email(fsRs.getString("VG_EMAIL_ID"));
+                helper.setCap_email(fsRs.getString("CAP_EMAIL_ID"));
+                helper.setVdi_name(fsRs.getString("VDI_NAME"));
+                helper.setCostcenter(fsRs.getString("GAD_COST_CENTER"));
+                helper.setRegion_revised(fsRs.getString("REGION_REVISED"));
+                helper.setGrade_revised(fsRs.getString("GRADE_REVISED"));
+                helper.setProject_Code(fsRs.getString("PROJECT_CODE"));
+                helper.setOdc_location(fsRs.getString("ODC_LOCATION"));
+                helper.setExhibit_type(fsRs.getString("EXHIBIT TYPE"));
+                helper.setResource_type(fsRs.getString("RESOURCE TYPE"));
+                helper.setPayment_type(fsRs.getString("PAYMENT TYPE"));
+                helper.setSow_start_date(fsRs.getString("SOW_START_DATE"));
+                helper.setSow_end_date(fsRs.getString("SOW_END_DATE"));
+                helper.setLocation(fsRs.getString("LOCATION"));
+                helper.setSbu(fsRs.getString("SBU"));
+                helper.setSow_name(fsRs.getString("SOW_NAME"));
+                helper.setCap_manager(fsRs.getString("CG MANAGER"));
+                
 				listOfReport.add(helper);
 			}
 		}catch(SQLException e){
@@ -126,12 +124,12 @@ public class ReportUtilHelper {
                 helper.setPractice(rs.getString("PRACTICE"));
                 helper.setSub_practice(rs.getString("SUB_PRACTICE"));
                 helper.setLocation(rs.getString("LOCATION"));
+                helper.setResource_name(rs.getString("EMP_NAME"));
                 //helper.setBu_portfolios(rs.getString("BU_PORTFOLIO"));
                 helper.setSbu(rs.getString("SBU"));
                 helper.setLob(rs.getString("LOB"));
                 helper.setDe(rs.getString("DE"));
                 helper.setEm_name(rs.getString("EM"));
-                //helper.setEndDateR2D2(rs.getString("END DATE R2D2"));
                 helper.setVendor(rs.getString("VENDOR"));
                 helper.setEmpID(rs.getString("EMP_ID"));
                 helper.setMonth(rs.getString("MONTH"));
@@ -142,7 +140,12 @@ public class ReportUtilHelper {
                 helper.setOdc_location(rs.getString("ODC_LOCATION"));
                 helper.setLwd(rs.getString("LWD"));
                 helper.setGadCostCenter(rs.getString("GAD_COST_CENTER"));
-                helper.setCurrentStatus(rs.getString("CURRENT_STATUS"));
+                helper.setCap_manager(rs.getString("CG MANAGER"));
+                helper.setVg_location(rs.getString("VG LOCATION"));
+                helper.setCap_manager(rs.getString("CG MANAGER"));
+                
+                helper.setVg_email(rs.getString("VG_EMAIL_ID"));
+                helper.setCap_email(rs.getString("CAP_EMAIL_ID"));
 
 				listOfReport.add(helper);
 			}
@@ -159,7 +162,7 @@ public class ReportUtilHelper {
 
  
 public static Cell createSrcCell(int cellNo,Row row,CellStyle style){			
-			style.setFillBackgroundColor(IndexedColors.RED1.index); 
+			style.setFillBackgroundColor(IndexedColors.ROSE.index); 
             style.setFillPattern(FillPatternType.DIAMONDS);             
             style.setBorderBottom(BorderStyle.THICK);
             style.setBorderLeft(BorderStyle.THICK);
