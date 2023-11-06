@@ -59,7 +59,6 @@ public class ReportUtilHelper {
                 helper.setRole_end_date(fsRs.getString("ROLE_END_DATE"));
                 helper.setRole_start_date(fsRs.getString("ROLE_START_DATE"));
                 helper.setSow_id(fsRs.getString("SOW_ID"));
-                //helper.setStatus(fsRs.getString("CURRENT_STATUS"));
                 helper.setTotal_contract_amount(fsRs.getString("TOTAL_CONTRACT_AMOUNT"));
                 helper.setVgcrew_id(fsRs.getDouble("VG_CREW_ID"));
                 helper.setLob(fsRs.getString("LOB"));
@@ -125,12 +124,12 @@ public class ReportUtilHelper {
                 helper.setPractice(rs.getString("PRACTICE"));
                 helper.setSub_practice(rs.getString("SUB_PRACTICE"));
                 helper.setLocation(rs.getString("LOCATION"));
+                helper.setResource_name(rs.getString("EMP_NAME"));
                 //helper.setBu_portfolios(rs.getString("BU_PORTFOLIO"));
                 helper.setSbu(rs.getString("SBU"));
                 helper.setLob(rs.getString("LOB"));
                 helper.setDe(rs.getString("DE"));
                 helper.setEm_name(rs.getString("EM"));
-                //helper.setEndDateR2D2(rs.getString("END DATE R2D2"));
                 helper.setVendor(rs.getString("VENDOR"));
                 helper.setEmpID(rs.getString("EMP_ID"));
                 helper.setMonth(rs.getString("MONTH"));
@@ -141,9 +140,12 @@ public class ReportUtilHelper {
                 helper.setOdc_location(rs.getString("ODC_LOCATION"));
                 helper.setLwd(rs.getString("LWD"));
                 helper.setGadCostCenter(rs.getString("GAD_COST_CENTER"));
-                helper.setCurrentStatus(rs.getString("CURRENT_STATUS"));
                 helper.setCap_manager(rs.getString("CG MANAGER"));
                 helper.setVg_location(rs.getString("VG LOCATION"));
+                helper.setCap_manager(rs.getString("CG MANAGER"));
+                
+                helper.setVg_email(rs.getString("VG_EMAIL_ID"));
+                helper.setCap_email(rs.getString("CAP_EMAIL_ID"));
 
 				listOfReport.add(helper);
 			}
@@ -160,7 +162,7 @@ public class ReportUtilHelper {
 
  
 public static Cell createSrcCell(int cellNo,Row row,CellStyle style){			
-			style.setFillBackgroundColor(IndexedColors.RED1.index); 
+			style.setFillBackgroundColor(IndexedColors.ROSE.index); 
             style.setFillPattern(FillPatternType.DIAMONDS);             
             style.setBorderBottom(BorderStyle.THICK);
             style.setBorderLeft(BorderStyle.THICK);

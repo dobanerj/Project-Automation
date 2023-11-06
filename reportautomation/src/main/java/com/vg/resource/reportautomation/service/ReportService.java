@@ -31,7 +31,7 @@ public class ReportService {
 
 		    try (Workbook workbook = new XSSFWorkbook()) {
 
-			File file = new File("C:/Users/SGHOSH31/Documents/Report/FSHCReport.xlsx");
+			File file = new File("C:/Users/dobanerj/Documents/Report/FSHCReport.xlsx");
 
 		   // File file = new File(ReportUtil.HC_REPORT_LOCATION);	
 
@@ -283,7 +283,7 @@ public class ReportService {
 
 		    try (Workbook workbook = new XSSFWorkbook()) {
 
-			File file = new File("C:/Users/SGHOSH31/Documents/Report/NOnHCReport.xlsx");
+			File file = new File("C:/Users/dobanerj/Documents/Report/NOnHCReport.xlsx");
 
 		   // File file = new File(ReportUtil.HC_REPORT_LOCATION);	
 
@@ -303,11 +303,25 @@ public class ReportService {
 
 			XSSFRow row=sheet.createRow(0);  
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SR_NO);
+			ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_SR_NO);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CREW_ID);
+
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LI_LR_ID);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_GG_ID);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LI_LR_ID);
+			ReportUtilHelper.createSrcCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_RESOURCE_NAME);
+
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CAP_EMAIL_ID);
+
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VG_EMAIL);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_CG_MANAGER);
+
+			ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VG_MANAGER);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LEVEL);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_GRADE_REVISED);
 
@@ -315,15 +329,55 @@ public class ReportService {
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_REGION);
 
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_REGION_REVISED);
+
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_GAD_COST_CENTER);
+
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PROJECT_CODE);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PROJECT_NAME);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_JOB_ROLE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SKILL);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_PRACTICE);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SUB_PRACTICE);
 
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PO);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_NAME);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_ID);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_START_DATE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_SOW_END_DATE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_EXHIBIT_TYPE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_RESOURCE_TYPE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURS);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_HOURLY_RATE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_AMOUNT);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_START_DATE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_ROLE_END_DATE);
+
 			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCATION);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_LOCATION_VG);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_TOTAL_CONTRACT_AMOUNT);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_PAYMENT_TYPE);
+
+			ReportUtilHelper.createSrcCell(colIndex++,row,style).setCellValue(ReportUtil.HC_REPORT_COMMENT);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_SBU);
 
@@ -333,29 +387,16 @@ public class ReportService {
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EM);
 
-			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VENDOR);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
 
-			///ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EMP_ID);
+			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_BU_PORTFOLIOS);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_MONTH);
-
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_ACCOUNT_NAME);
-
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_REGION_REVISED);
-
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VG_EMAIL);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
 
 			ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VDI_NAME);
 
 			ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_ODC_LOCATION);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_LWD);
-
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_GAD_COST_CENTER);
-
-			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
-	 
-			
 
 			int index=1;
 
@@ -369,9 +410,23 @@ public class ReportService {
 
 				dataRow.createCell(colNo++).setCellValue(index++);
 
+				dataRow.createCell(colNo++).setCellValue(excel1.getVgcrew_id());
+
 				dataRow.createCell(colNo++).setCellValue(excel1.getLi_lr_id());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getGgid());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getResource_name());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getCap_email());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getVg_email());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getCap_manager());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getVg_manager());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getLevel());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getGrade_revised());
 
@@ -379,16 +434,54 @@ public class ReportService {
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getRegion());
 
+				dataRow.createCell(colNo++).setCellValue(excel1.getRegion_revised()); 
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getCostcenter());
+
 				dataRow.createCell(colNo++).setCellValue(excel1.getProject_Code());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getProject_name());
+
 				dataRow.createCell(colNo++).setCellValue(excel1.getJob_role());
 				dataRow.createCell(colNo++).setCellValue(excel1.getPrimaryskill());
+
 				dataRow.createCell(colNo++).setCellValue(excel1.getPractice());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getSub_practice());
 
+				dataRow.createCell(colNo++).setCellValue(excel1.getPo());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getSow_name());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getSow_id());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getSow_start_date());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getSow_end_date());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getExhibit_type());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getResource_type());
+	 
+				dataRow.createCell(colNo++).setCellValue(excel1.getHours());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getHourly_rate());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getAmount());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getRole_start_date());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getRole_end_date());
+
 				dataRow.createCell(colNo++).setCellValue(excel1.getLocation());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getVg_location());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getTotal_contract_amount());
+	 
+				dataRow.createCell(colNo++).setCellValue(excel1.getPayment_type());
+
+				dataRow.createCell(colNo++).setCellValue(excel1.getComment());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getSbu());
 
@@ -398,25 +491,10 @@ public class ReportService {
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getEm_name());
 
-				dataRow.createCell(colNo++).setCellValue(excel1.getVendor());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getEmpID());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getMonth());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getAccountName()); 
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getRegion_revised()); 
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getVg_email());
-
+				dataRow.createCell(colNo++).setCellValue(excel1.getBu_portfolios());
 				dataRow.createCell(colNo++).setCellValue(excel1.getVdi_name());
 
-				dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getLwd());
-
-			}
+				dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());			}
 
 			try 
 
