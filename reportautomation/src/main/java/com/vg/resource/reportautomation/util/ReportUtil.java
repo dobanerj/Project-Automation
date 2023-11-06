@@ -14,7 +14,7 @@ public interface ReportUtil {
 			   " LEFT JOIN  \"VG_VDI_DETAIL\"  on  \"VG_GAD_DATA\".\"GGID\"  = \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
 	           " JOIN \"SOW_MASTER\" on \"SOW_MASTER\".\"SOW_ID\" =  \"VG_SOURCE\".\"SOW_ID\" ";
 	
-		public final String NonFsquery="SELECT Distinct \"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ,\"VG_GAD_DATA\".\"CG MANAGER\" ,"+
+		public final String NonFsquery="SELECT Distinct \"VG_GAD_DATA\".\"LI_LR_ID\" ,\"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ,\"VG_GAD_DATA\".\"CG MANAGER\" ,"+
 				
 			    "\"VG_GAD_DATA\".\"GRADE_REVISED\" ,\"VG_GAD_DATA\".\"LOCAL_GRADE\" , \"VG_GAD_DATA\".\"REGION\" , \"VG_GAD_DATA\".\"REGION_REVISED\",\"VG_GAD_DATA\".\"GGID\",\"VG_GAD_DATA\".\"CG MANAGER\","+
 			    "\"VG_GAD_DATA\".\"GAD_COST_CENTER\" ,\"VG_GAD_DATA\".\"PROJECT_CODE\" ,\"VG_GAD_DATA\".\"PROJECT_NAME\", \"VG_GAD_DATA\".\"PRACTICE\","+

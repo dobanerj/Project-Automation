@@ -1,18 +1,23 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGNonFSEntity;
+import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
 import com.vg.resource.reportautomation.repo.vgNonFSRepo;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -36,107 +41,35 @@ public class NonFSHelp {
 	public static List<VGNonFSEntity> convertExceltoList(InputStream is)
 	{
 		List<VGNonFSEntity> list = new ArrayList<>();
+		Map<String, Integer> requiredHeaders = new HashMap<>();
 		try {
-			
+			DataFormatter formatter = new DataFormatter();
 			Workbook workbook = new XSSFWorkbook(is);
 			Sheet sheet = workbook.getSheetAt(0);
-			
+			for (Cell cell : sheet.getRow(0)) {
+				requiredHeaders.put(cell.getStringCellValue(), cell.getColumnIndex());
+			}
+			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+				Row row = sheet.getRow(i);
+				VGNonFSEntity noFSExceldata = new VGNonFSEntity();
+				noFSExceldata.setEmpID(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp ID"))));
+				noFSExceldata.setLob(formatter.formatCellValue(row.getCell(requiredHeaders.get("LOB"))));
+				noFSExceldata.setEmpName(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp Name"))));
+				noFSExceldata.setEmpEmailId(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp email ID"))));
+				noFSExceldata.setProjectcode(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project code "))));
+				noFSExceldata.setProjectname(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));
+				//noFSExceldata.setStartDate((Date)formatter.formatCellValue(row.getCell(requiredHeaders.get("ODC Location"))));
+				//noFSExceldata.setEndDate((Date) row.getCell(requiredHeaders.get("LWD")));
+				noFSExceldata.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
+				noFSExceldata.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
+				noFSExceldata.setRevisedRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));		
+				list.add(noFSExceldata);
+			}
+
 			int rowNumber =0;
 			Iterator<Row> iterator = sheet.iterator();
 			
-			while(iterator.hasNext())
-			{
-				Row row = iterator.next();
-				if(rowNumber == 0)
-				{
-					rowNumber++;
-					continue;
-				}
-				
-				Iterator<Cell> cells = row.iterator();
-				int cellId = 0;
-				VGNonFSEntity noFSExceldata = new VGNonFSEntity();
-				while(cells.hasNext())
-
-				{
-
-
-					Cell cell = cells.next();
-					switch(cellId)
-					{
-					
-					case 0:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setEmpID(cell.getStringCellValue());
-						break;
-					case 1:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setMonth(cell.getStringCellValue());
-						break;	
-					case 2:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setAccountName(cell.getStringCellValue());
-						break;
-					case 3:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setLob(cell.getStringCellValue());
-						break;
-					case 4:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setEmpName(cell.getStringCellValue());
-						break;
-					case 5:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setEmpEmailId(cell.getStringCellValue());
-						break;
-					case 6:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setEmpUserID(cell.getStringCellValue());
-						break;
-					case 7:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setDesignation(cell.getStringCellValue());
-						break;
-					case 8:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setProjectcode(cell.getStringCellValue());
-						break;
-					case 9:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setProjectname(cell.getStringCellValue());
-						break;
-					case 10:
-						cell.setCellType(CellType.NUMERIC);
-						noFSExceldata.setStartDate(cell.getDateCellValue());
-						break;
-					case 11:
-						cell.setCellType(CellType.NUMERIC);
-						noFSExceldata.setEndDate(cell.getDateCellValue());
-						break;
-					case 12:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setRegion(cell.getStringCellValue());
-						break;
-					case 13:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setLocation(cell.getStringCellValue());
-						break;
-					case 14:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setRevisedRegion(cell.getStringCellValue());
-						break;
-					case 15:
-						cell.setCellType(CellType.STRING);
-						noFSExceldata.setLbs(cell.getStringCellValue());
-						break;
-					default:
-						break;
-
-					}
-					cellId++;
-				}
-				list.add(noFSExceldata);				
-			}
+			
 		}
 		catch(Exception e)
 		{
