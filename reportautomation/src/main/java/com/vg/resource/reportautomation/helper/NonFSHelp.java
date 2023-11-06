@@ -1,27 +1,23 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.vg.resource.reportautomation.entity.VGNonFSEntity;
-import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
-import com.vg.resource.reportautomation.repo.vgNonFSRepo;
-
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.vg.resource.reportautomation.entity.VGNonFSEntity;
+import com.vg.resource.reportautomation.repo.vgNonFSRepo;
 
 
 
