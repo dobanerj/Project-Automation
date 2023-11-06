@@ -142,7 +142,10 @@ public class SourcelHelp {
 						break;
 					case 20:						
 						sourcedata.setPaymentType(cell.getStringCellValue());
-						break;				
+						break;
+					case 21:						
+						sourcedata.setLocationVg(cell.getStringCellValue());
+						break;					
 					default:
 						break;
 					}

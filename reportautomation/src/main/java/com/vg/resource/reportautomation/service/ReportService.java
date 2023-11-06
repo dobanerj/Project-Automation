@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -137,11 +135,11 @@ public class ReportService {
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EM);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_BU_PORTFOLIOS);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_END_DATE_R2D2);
 
 			ReportUtilHelper.createOrangeCell(colIndex++,row,styleORG).setCellValue(ReportUtil.HC_REPORT_VDI_NAME);
 
@@ -191,6 +189,7 @@ public class ReportService {
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getProject_name());
 
+				dataRow.createCell(colNo++).setCellValue(excel1.getJob_role());
 				dataRow.createCell(colNo++).setCellValue(excel1.getPrimaryskill());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getPractice());
@@ -239,12 +238,7 @@ public class ReportService {
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getEm_name());
 
-				dataRow.createCell(colNo++).setCellValue(excel1.getStatus());
-
 				dataRow.createCell(colNo++).setCellValue(excel1.getBu_portfolios());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getR2d2());
-
 				dataRow.createCell(colNo++).setCellValue(excel1.getVdi_name());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());
@@ -339,9 +333,9 @@ public class ReportService {
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EM);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VENDOR);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_VENDOR);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EMP_ID);
+			///ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_EMP_ID);
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_MONTH);
 
@@ -359,7 +353,7 @@ public class ReportService {
 
 			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_GAD_COST_CENTER);
 
-			ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
+			//ReportUtilHelper.createGadCell(colIndex++,row,styleBlue).setCellValue(ReportUtil.HC_REPORT_CURRENT_STATUS);
 	 
 			
 
@@ -388,7 +382,8 @@ public class ReportService {
 				dataRow.createCell(colNo++).setCellValue(excel1.getProject_Code());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getProject_name());
-
+				dataRow.createCell(colNo++).setCellValue(excel1.getJob_role());
+				dataRow.createCell(colNo++).setCellValue(excel1.getPrimaryskill());
 				dataRow.createCell(colNo++).setCellValue(excel1.getPractice());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getSub_practice());
@@ -420,11 +415,6 @@ public class ReportService {
 				dataRow.createCell(colNo++).setCellValue(excel1.getOdc_location());
 
 				dataRow.createCell(colNo++).setCellValue(excel1.getLwd());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getCostcenter());
-
-				dataRow.createCell(colNo++).setCellValue(excel1.getCurrentStatus());
-
 
 			}
 

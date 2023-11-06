@@ -56,5 +56,7 @@ public class vgGadEntity {
 	private String endDateR2d2;	
 	@Column(name="\"LOCATION\"")
     private String location;
+	@Column(name="\"CG MANAGER\"")
+    private String supervisor;
 	
 }

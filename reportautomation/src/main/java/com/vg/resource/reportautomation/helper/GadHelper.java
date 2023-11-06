@@ -145,7 +145,11 @@ public class GadHelper {
 					case 20:
 						cell.setCellType(CellType.STRING);						
 						VgGadExcel.setLocation(cell.getStringCellValue());
-						break;	
+						break;
+					case 21:
+						cell.setCellType(CellType.STRING);						
+						VgGadExcel.setSupervisor(cell.getStringCellValue());
+						break;		
 					default:
 						break;
 					
