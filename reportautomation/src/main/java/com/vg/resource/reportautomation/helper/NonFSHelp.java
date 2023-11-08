@@ -2,6 +2,7 @@ package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -53,12 +54,12 @@ public class NonFSHelp {
 				noFSExceldata.setEmpName(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp Name"))));
 				noFSExceldata.setEmpEmailId(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp email ID"))));
 				noFSExceldata.setProjectcode(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project code "))));
-				noFSExceldata.setProjectname(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));
-				//noFSExceldata.setStartDate((Date)formatter.formatCellValue(row.getCell(requiredHeaders.get("ODC Location"))));
-				//noFSExceldata.setEndDate((Date) row.getCell(requiredHeaders.get("LWD")));
-				noFSExceldata.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
-				noFSExceldata.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
-				noFSExceldata.setRevisedRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));		
+				noFSExceldata.setProjectname(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project Name"))));
+				//noFSExceldata.setStartDate((Date)row.getCell(requiredHeaders.get("Start Date")));
+				//noFSExceldata.setEndDate((Date)row.getCell(requiredHeaders.get("End Date")));
+				noFSExceldata.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Region"))));	
+				noFSExceldata.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("Location"))));	
+				noFSExceldata.setRevisedRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Revised Region"))));		
 				list.add(noFSExceldata);
 			}
 
