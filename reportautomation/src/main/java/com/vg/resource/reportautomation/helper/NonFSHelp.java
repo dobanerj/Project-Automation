@@ -55,18 +55,15 @@ public class NonFSHelp {
 				noFSExceldata.setEmpEmailId(formatter.formatCellValue(row.getCell(requiredHeaders.get("Emp email ID"))));
 				noFSExceldata.setProjectcode(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project code "))));
 				noFSExceldata.setProjectname(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project Name"))));
-				//noFSExceldata.setStartDate((Date)row.getCell(requiredHeaders.get("Start Date")));
-				//noFSExceldata.setEndDate((Date)row.getCell(requiredHeaders.get("End Date")));
-				noFSExceldata.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Region"))));	
-				noFSExceldata.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("Location"))));	
-				noFSExceldata.setRevisedRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Revised Region"))));		
+				noFSExceldata.setStartDate((Date)row.getCell(requiredHeaders.get("ODC Location")));
+				noFSExceldata.setEndDate((Date) row.getCell(requiredHeaders.get("LWD")));
+				noFSExceldata.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
+				noFSExceldata.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));	
+				noFSExceldata.setRevisedRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));		
 				list.add(noFSExceldata);
 			}
-
 			int rowNumber =0;
-			Iterator<Row> iterator = sheet.iterator();
-			
-			
+			Iterator<Row> iterator = sheet.iterator();		
 		}
 		catch(Exception e)
 		{

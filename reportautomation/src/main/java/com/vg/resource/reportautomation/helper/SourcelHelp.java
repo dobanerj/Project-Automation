@@ -50,20 +50,17 @@ public class SourcelHelp {
 			for (Cell cell : sheet.getRow(0)) {
 				requiredHeaders.put(cell.getStringCellValue(), cell.getColumnIndex());
 			}
-			
-			
-			
+
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 				Row row = sheet.getRow(i);
 				VGSourceEntity sourceExcelData = new VGSourceEntity();
 				sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get("GGID"))));
-				sourceExcelData.setVGCrewId((formatter.formatCellValue(row.getCell(requiredHeaders.get("VG Crew Id"))));
 				sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get("Resource Name"))));
 				sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get("Level"))));
 				sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get("Job Role"))));
 				sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get("Primary Skill"))));
 				sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get("PO"))));
-				sourceExcelData.setSowId(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW Id"))));
+				sourceExcelData.setSowId(Integer.getInteger(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW Id")))));
 				sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get("Hours"))));
 				sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get("Hourly Rate"))));
 				sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("Amount"))));
@@ -78,19 +75,13 @@ public class SourcelHelp {
 				sourceExcelData.setSowStartDate((Date)row.getCell(requiredHeaders.get("SOW Start Date")));
 				sourceExcelData.setSowEndDate((Date)row.getCell(requiredHeaders.get("SOW End Date")));
 				sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG Location"))));
-				
-				
-				
-				
+ 
 				list.add(sourceExcelData);
 			}
 
 			int rowNumber =0;
 			Iterator<Row> iterator = sheet.iterator();
-			
-			
-			
-			
+	
 			/*Workbook workbook = new XSSFWorkbook(is);
 			Sheet sheet = workbook.getSheetAt(0);
 			
