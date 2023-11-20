@@ -1,6 +1,7 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,20 +37,19 @@ public class VGVdiDetailHelper {
 			DataFormatter formatter = new DataFormatter();
 			Workbook workbook = new XSSFWorkbook(is);
 			Sheet sheet = workbook.getSheetAt(0);
-			for (Cell cell : sheet.getRow(0)) {
-				requiredHeaders.put(cell.getStringCellValue(), cell.getColumnIndex());
+			for (Cell cell : sheet.getRow(0)) {				
+				requiredHeaders.put(cell.getStringCellValue().toUpperCase().trim(), cell.getColumnIndex());
 			}
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 				Row row = sheet.getRow(i);
-				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();
-				vdidata.setId(formatter.formatCellValue(row.getCell(requiredHeaders.get("ID"))));
-				vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get("ID"))));
-				vdidata.setResource_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("Resource Name"))));
-				//vdidata.setVg_email_id(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG Email ID"))));
-				vdidata.setVdi_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("VDI name"))));
-				vdidata.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));
-				vdidata.setOdc_location(formatter.formatCellValue(row.getCell(requiredHeaders.get("ODC Location"))));
-				//vdidata.setLwd((Date) row.getCell(requiredHeaders.get("LWD")));				
+				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();							
+				vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get("ID"))).toString());
+				vdidata.setResource_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE NAME"))));
+				vdidata.setVg_email_id(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG EMAIL ID"))));
+				vdidata.setVdi_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("VDI NAME"))));
+				vdidata.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
+				vdidata.setOdc_location(formatter.formatCellValue(row.getCell(requiredHeaders.get("ODC LOCATION"))));				
+				vdidata.setLwd(formatter.formatCellValue(row.getCell(requiredHeaders.get("LWD"))));				
 				list.add(vdidata);
 			}
 			

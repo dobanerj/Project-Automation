@@ -20,9 +20,7 @@ public class VGVdiDetailEntity implements Serializable{
 	@Column(name="\"SR.NO\"")
 	private Integer serialNo;
 	@Column(name="\"VDI_GGID\"" ,unique=false)
-	private String vdi_ggid;	
-	@Column(name="\"CREWID\"")
-	private String id;
+	private String vdi_ggid;
 	@Column(name="\"RESOURCE_NAME\"")
 	private String resource_name;
 	@Column(name="\"VG_EMAIL_ID\"")
@@ -34,7 +32,7 @@ public class VGVdiDetailEntity implements Serializable{
 	@Column(name="\"STATUS\"")
 	private String status;
 	@Column(name="\"LWD\"")
-	private Date lwd;
+	private String lwd;
 	
 	
 }
