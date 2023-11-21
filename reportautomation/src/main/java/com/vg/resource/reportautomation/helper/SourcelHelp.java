@@ -1,25 +1,26 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.VGSourceEntity;
-
-
-
+ 
+ 
 public class SourcelHelp {
-	
-	
+
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
 		String contentType = file.getContentType();
@@ -29,131 +30,46 @@ public class SourcelHelp {
 		}
 		return false;
 	}
-	
 	public static List<VGSourceEntity> convertExceltoList(InputStream is)
 	{
 		List<VGSourceEntity> list = new ArrayList<>();
+		Map<String, Integer> requiredHeaders = new HashMap<>();
 		try {
-			
-			Workbook workbook = new XSSFWorkbook(is);
-			Sheet sheet = workbook.getSheetAt(0);
-			
-			int rowNumber =0;
-			Iterator<Row> iterator = sheet.iterator();
-			
-			while(iterator.hasNext())
-			{
-				Row row = iterator.next();
-				if(rowNumber == 0)
-				{
-					rowNumber++;
-					continue;
+			DataFormatter formatter = new DataFormatter();
+			try (Workbook workbook = new XSSFWorkbook(is)) {
+				Sheet sheet = workbook.getSheetAt(0);				
+				for (Cell cell : sheet.getRow(sheet.getFirstRowNum())) {
+					requiredHeaders.put(cell.getStringCellValue().toUpperCase().trim(), cell.getColumnIndex());
 				}
-				
-				Iterator<Cell> cells = row.iterator();
-				int cellId = 0;
-				VGSourceEntity sourcedata = new VGSourceEntity();
-				while(cells.hasNext())
-
-				{
-
-					Cell cell = cells.next();
-					switch(cellId)
-					{
-					case 0:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setGGId(cell.getStringCellValue());
-						break;
-					case 1:
-						cell.setCellType(CellType.NUMERIC);
-						sourcedata.setVGCrewId(cell.getNumericCellValue());
-						break;
-					case 2:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setResourceName(cell.getStringCellValue());
-						break;
-					case 3:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setLevel(cell.getStringCellValue());
-						break;
-					case 4:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setJobRole(cell.getStringCellValue());
-						break;
-					case 5:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setPrimaryskill(cell.getStringCellValue());
-						break;
-					case 6:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setPo(cell.getStringCellValue());
-						break;
-					case 7:
-						cell.setCellType(CellType.NUMERIC);
-						sourcedata.setSowId((int)cell.getNumericCellValue());
-						break;
-					case 8:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setHours(cell.getStringCellValue());
-						break;
-					case 9:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setHourlyRate(cell.getStringCellValue());
-						break;
-					case 10:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setAmount(cell.getStringCellValue());
-						break;
-					case 11:
-						cell.setCellType(CellType.NUMERIC);
-						sourcedata.setRoleStartDate(cell.getDateCellValue());
-						break;
-					case 12:
-						cell.setCellType(CellType.NUMERIC);
-						sourcedata.setRoleEndDate(cell.getDateCellValue());
-						break;
-					case 13:
-						cell.setCellType(CellType.STRING);
-						sourcedata.setTotalContractAmount(cell.getStringCellValue());
-						break;
-					case 14:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setComment(cell.getStringCellValue());
-						break;
-					case 15:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setStatus(cell.getStringCellValue());
-						break;
-					case 16:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setExhibit_type(cell.getStringCellValue());
-						break;
-					case 17:
-						cell.setCellType(CellType.STRING);						
-						sourcedata.setResourc_type(cell.getStringCellValue());
-						break;	
-					case 18:
-						cell.setCellType(CellType.NUMERIC);						
-						sourcedata.setSowStartDate(cell.getDateCellValue());
-						break;
-					case 19:
-						cell.setCellType(CellType.NUMERIC);						
-						sourcedata.setSowEndDate(cell.getDateCellValue());
-						break;
-					case 20:						
-						sourcedata.setPaymentType(cell.getStringCellValue());
-						break;
-					case 21:						
-						sourcedata.setLocationVg(cell.getStringCellValue());
-						break;					
-					default:
-						break;
-					}
-					cellId++;
+				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+					Row row = sheet.getRow(i);
+					VGSourceEntity sourceExcelData = new VGSourceEntity();
+					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG CREW ID"))));
+					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE NAME"))));
+					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get("LEVEL"))));
+					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get("JOB TITLE/ROLE (PLEASE USE DROP DOWN SELECTION)"))));
+					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get("PRIMARY SKILLS"))));
+					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get("PO#"))));
+					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).isEmpty() || 
+					 formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).equals("TBD")))
+					sourceExcelData.setSowId(Integer.valueOf(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID")))));
+					sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURS"))));
+					sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURLY RATE"))));
+					sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("AMOUNT"))));
+					sourceExcelData.setRoleStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE START DATE"))));
+					sourceExcelData.setRoleEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE END DATE"))));
+					sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("TOTAL CONTRACT AMOUNT"))));
+					sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get("COMMENTS (IF ANY)"))));
+					//sourceExcelData.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
+					sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("EXHIBIT TYPE"))));
+					sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE TYPE"))));
+					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get("PAYMENT TYPE"))));
+					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW START DATE"))));
+					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW END DATE"))));
+					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG LOCATION")))); 					
+					list.add(sourceExcelData);
 				}
-				list.add(sourcedata);				
 			}
-			workbook.close();
 		}
 		catch(Exception e)
 		{

@@ -31,7 +31,7 @@ public class vgGadEntity {
 	@Column(name="\"GAD_COST_CENTER\"")
 	private String gadCostCenter;
 	@Column(name="\"PROJECT_CODE\"")
-	private double projectCode;
+	private String projectCode;
 	@Column(name="\"PROJECT_NAME\"")
 	private String projectName;
 	@Column(name="\"PRACTICE\"")
@@ -58,5 +58,4 @@ public class vgGadEntity {
     private String location;
 	@Column(name="\"CG MANAGER\"")
     private String supervisor;
-	
 }

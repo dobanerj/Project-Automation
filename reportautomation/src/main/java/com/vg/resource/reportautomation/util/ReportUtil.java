@@ -12,7 +12,7 @@ public interface ReportUtil {
 				"\"VG_VDI_DETAIL\".\"VDI_NAME\" , \"VG_VDI_DETAIL\".\"ODC_LOCATION\", \"VG_VDI_DETAIL\".\"STATUS\", \"VG_VDI_DETAIL\".\"LWD\" "+
 			   " FROM  \"VG_SOURCE\"  left join  \"VG_GAD_DATA\"   on  \"VG_SOURCE\".\"GGID\"  =  \"VG_GAD_DATA\".\"GGID\" "+
 			   " LEFT JOIN  \"VG_VDI_DETAIL\"  on  \"VG_GAD_DATA\".\"GGID\"  = \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
-	           " JOIN \"SOW_MASTER\" on \"SOW_MASTER\".\"SOW_ID\" =  \"VG_SOURCE\".\"SOW_ID\" ";
+	           " LEFT JOIN \"SOW_MASTER\" on \"SOW_MASTER\".\"SOW_ID\" =  \"VG_SOURCE\".\"SOW_ID\" ORDER BY \"VG_SOURCE\".\"RESOURCE_NAME\" ASC ";
 	
 		public final String NonFsquery="SELECT Distinct \"VG_GAD_DATA\".\"LI_LR_ID\" ,\"VG_GAD_DATA\".\"CAP_EMAIL_ID\" ,\"VG_GAD_DATA\".\"CG MANAGER\" ,"+
 				
@@ -25,7 +25,7 @@ public interface ReportUtil {
 			    " \"VG_NON_FS_MASTER_DATA\".\"REGION\",\"VG_NON_FS_MASTER_DATA\".\"VG LOCATION\",\"VG_NON_FS_MASTER_DATA\".\"REVISED_REGION\" , \"VG_NON_FS_MASTER_DATA\".\"IBS\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
 				"\"VG_VDI_DETAIL\".\"VDI_NAME\" , \"VG_VDI_DETAIL\".\"ODC_LOCATION\", \"VG_VDI_DETAIL\".\"STATUS\", \"VG_VDI_DETAIL\".\"LWD\" "+
 			   " FROM  \"VG_GAD_DATA\"  left join  \"VG_VDI_DETAIL\"   on  \"VG_GAD_DATA\".\"GGID\"  =  \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
-			   " LEFT JOIN  \"VG_NON_FS_MASTER_DATA\"  on  \"VG_NON_FS_MASTER_DATA\".\"EMP_ID\"  = \"VG_GAD_DATA\".\"LI_LR_ID\" ";
+			   " LEFT JOIN  \"VG_NON_FS_MASTER_DATA\"  on  \"VG_NON_FS_MASTER_DATA\".\"EMP_ID\"  = \"VG_GAD_DATA\".\"LI_LR_ID\" ORDER BY \"VG_NON_FS_MASTER_DATA\".\"EMP_NAME\" ASC ";
 
 
 	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Report/";   
