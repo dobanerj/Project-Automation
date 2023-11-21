@@ -34,7 +34,7 @@ public class VGVdiDetailEntity implements Serializable{
 	@Column(name="\"STATUS\"")
 	private String status;
 	@Column(name="\"LWD\"")
-	private Date lwd;
+	private String lwd;
 	
 	
 }

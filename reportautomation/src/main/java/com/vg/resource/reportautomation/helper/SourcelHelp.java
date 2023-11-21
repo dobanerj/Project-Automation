@@ -1,23 +1,19 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
- 
+
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
- 
-import com.vg.resource.reportautomation.entity.VGNonFSEntity;
+
 import com.vg.resource.reportautomation.entity.VGSourceEntity;
  
  
@@ -38,43 +34,40 @@ public class SourcelHelp {
 		Map<String, Integer> requiredHeaders = new HashMap<>();
 		try {
 			DataFormatter formatter = new DataFormatter();
-			Workbook workbook = new XSSFWorkbook(is);
-			Sheet sheet = workbook.getSheetAt(0);
-			for (Cell cell : sheet.getRow(0)) {
-				requiredHeaders.put(cell.getStringCellValue(), cell.getColumnIndex());
+			try (Workbook workbook = new XSSFWorkbook(is)) {
+				Sheet sheet = workbook.getSheetAt(0);				
+				for (Cell cell : sheet.getRow(sheet.getFirstRowNum())) {
+					requiredHeaders.put(cell.getStringCellValue().toUpperCase().trim(), cell.getColumnIndex());
+				}
+				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+					Row row = sheet.getRow(i);
+					VGSourceEntity sourceExcelData = new VGSourceEntity();
+					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG CREW ID"))));
+					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE NAME"))));
+					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get("LEVEL"))));
+					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get("JOB TITLE/ROLE (PLEASE USE DROP DOWN SELECTION)"))));
+					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get("PRIMARY SKILLS"))));
+					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get("PO#"))));
+					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).isEmpty() || 
+					 formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).equals("TBD")))
+					sourceExcelData.setSowId(Integer.valueOf(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID")))));
+					sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURS"))));
+					sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURLY RATE"))));
+					sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("AMOUNT"))));
+					sourceExcelData.setRoleStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE START DATE"))));
+					sourceExcelData.setRoleEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE END DATE"))));
+					sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("TOTAL CONTRACT AMOUNT"))));
+					sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get("COMMENTS (IF ANY)"))));
+					//sourceExcelData.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
+					sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("EXHIBIT TYPE"))));
+					sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE TYPE"))));
+					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get("PAYMENT TYPE"))));
+					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW START DATE"))));
+					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW END DATE"))));
+					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG LOCATION")))); 					
+					list.add(sourceExcelData);
+				}
 			}
-			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-				Row row = sheet.getRow(i);
-				VGSourceEntity sourceExcelData = new VGSourceEntity();
-				sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get("GGID"))));
-				sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get("Resource Name"))));
-				sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get("Level"))));
-				sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get("Job Title/Role (Please use drop down selection)"))));
-				//sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get("PRIMARY SKILLS"))));
-				sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get("PO#"))));
-				//sourceExcelData.setSowId(Integer.getInteger(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID")))));
-				sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get("Hours"))));
-				sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get("Hourly Rate"))));
-				sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("Amount"))));
-				//sourceExcelData.setRoleStartDate((Date)row.getCell(requiredHeaders.get("Role Start Date")));
-				//sourceExcelData.setRoleEndDate((Date)row.getCell(requiredHeaders.get("Role End Date")));
-				sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("Total Contract Amount"))));
-				sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get("Comments (if any)"))));
-				//sourceExcelData.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("Status"))));
-				sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("Exhibit Type"))));
-				sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("Resource Type"))));
-				sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get("Payment Type"))));
-				//sourceExcelData.setSowStartDate((Date)row.getCell(requiredHeaders.get("SOW Start Date")));
-				//sourceExcelData.setSowEndDate((Date)row.getCell(requiredHeaders.get("SOW End Date")));
-				//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG Location")))); not in excel
- 
-				
-				list.add(sourceExcelData);
-			}
- 
-			int rowNumber =0;
-			Iterator<Row> iterator = sheet.iterator();
-
 		}
 		catch(Exception e)
 		{
