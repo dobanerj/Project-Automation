@@ -10,7 +10,7 @@ public interface ReportUtil {
 			    "\"VG_SOURCE\".\"PAYMENT TYPE\",\"VG_SOURCE\".\"SOW_START_DATE\",\"VG_SOURCE\".\"SOW_END_DATE\",\"VG_SOURCE\".\"LEVEL\" ,\"VG_SOURCE\".\"PO\" ,\"VG_SOURCE\".\"PRIMARY_SKILL\" , \"VG_SOURCE\".\"RESOURCE_NAME\" ,\"VG_SOURCE\".\"ROLE_END_DATE\" ,"+
 			    "\"VG_SOURCE\".\"EXHIBIT TYPE\",\"VG_SOURCE\".\"RESOURCE TYPE\",\"VG_SOURCE\".\"VG_CREW_ID\" , \"VG_SOURCE\".\"SOW_ID\",\"VG_SOURCE\".\"TOTAL_CONTRACT_AMOUNT\" ,\"VG_SOURCE\".\"ROLE_START_DATE\",\"VG_VDI_DETAIL\".\"VG_EMAIL_ID\" ," +
 				"\"VG_VDI_DETAIL\".\"VDI_NAME\" , \"VG_VDI_DETAIL\".\"ODC_LOCATION\", \"VG_VDI_DETAIL\".\"STATUS\", \"VG_VDI_DETAIL\".\"LWD\" "+
-			   " FROM  \"VG_SOURCE\"  left join  \"VG_GAD_DATA\"   on  \"VG_SOURCE\".\"GGID\"  =  \"VG_GAD_DATA\".\"GGID\" "+
+			   " FROM  \"VG_GAD_DATA\"  left join  \"VG_SOURCE\"    ON  \"VG_SOURCE\".\"GGID\"  =  \"VG_GAD_DATA\".\"GGID\" "+
 			   " LEFT JOIN  \"VG_VDI_DETAIL\"  on  \"VG_GAD_DATA\".\"GGID\"  = \"VG_VDI_DETAIL\".\"VDI_GGID\" "+
 	           " LEFT JOIN \"SOW_MASTER\" on \"SOW_MASTER\".\"SOW_ID\" =  \"VG_SOURCE\".\"SOW_ID\" ORDER BY \"VG_SOURCE\".\"RESOURCE_NAME\" ASC ";
 	

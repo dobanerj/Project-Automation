@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.vgGadEntity;
+import com.vg.resource.reportautomation.util.ReportUtil;
 
 public class GadHelper {	
 	
@@ -46,7 +47,7 @@ public class GadHelper {
 					if(row!=null){
 					vgGadEntity vggadEntity = new vgGadEntity();
 					
-					vggadEntity.setGgid(formatter.formatCellValue(row.getCell(requiredHeaders.get("GGID"))));
+					vggadEntity.setGgid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GG_ID))));
 					vggadEntity.setLi_lrId(formatter.formatCellValue(row.getCell(requiredHeaders.get("LI/LR ID"))));
 					vggadEntity.setCapEmailid(formatter.formatCellValue(row.getCell(requiredHeaders.get("CAP EMAIL ID"))));
 					vggadEntity.setGraderevised(formatter.formatCellValue(row.getCell(requiredHeaders.get("GRADE REVISED"))));

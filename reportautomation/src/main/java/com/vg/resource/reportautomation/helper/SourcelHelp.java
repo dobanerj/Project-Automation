@@ -61,13 +61,12 @@ public class SourcelHelp {
 					sourceExcelData.setRoleEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ROLE_END_DATE))));
 					sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_TOTAL_CONTRACT_AMOUNT))));
 					sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_COMMENT))));
-					//sourceExcelData.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
 					sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_EXHIBIT_TYPE))));
 					sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_TYPE))));
 					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PAYMENT_TYPE))));
 					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_START_DATE))));
 					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_END_DATE))));
-					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG LOCATION")))); 					
+					sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION_VG)))); 					
 					list.add(sourceExcelData);
 				}
 			}
