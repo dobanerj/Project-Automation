@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.VGSourceEntity;
+import com.vg.resource.reportautomation.util.ReportUtil;
  
  
 public class SourcelHelp {
@@ -44,28 +45,28 @@ public class SourcelHelp {
 				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 					Row row = sheet.getRow(i);
 					VGSourceEntity sourceExcelData = new VGSourceEntity();
-					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG CREW ID"))));
-					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE NAME"))));
-					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get("LEVEL"))));
-					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get("JOB TITLE/ROLE (PLEASE USE DROP DOWN SELECTION)"))));
-					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get("PRIMARY SKILLS"))));
-					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get("PO#"))));
-					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).isEmpty() || 
-					 formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID"))).equals("TBD")))
-					sourceExcelData.setSowId(Integer.valueOf(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW ID")))));
-					sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURS"))));
-					sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get("HOURLY RATE"))));
-					sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("AMOUNT"))));
-					sourceExcelData.setRoleStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE START DATE"))));
-					sourceExcelData.setRoleEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("ROLE END DATE"))));
-					sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get("TOTAL CONTRACT AMOUNT"))));
-					sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get("COMMENTS (IF ANY)"))));
+					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_CREW_ID))));
+					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
+					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LEVEL))));
+					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_JOB_ROLE))));
+					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SKILL))));
+					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PO))));
+					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID))).isEmpty() || 
+					 formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID))).equals("TBD")))
+					sourceExcelData.setSowId(Integer.valueOf(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID)))));
+					sourceExcelData.setHours(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_HOURS))));
+					sourceExcelData.setHourlyRate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_HOURLY_RATE))));
+					sourceExcelData.setAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_AMOUNT))));
+					sourceExcelData.setRoleStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ROLE_START_DATE))));
+					sourceExcelData.setRoleEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ROLE_END_DATE))));
+					sourceExcelData.setTotalContractAmount(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_TOTAL_CONTRACT_AMOUNT))));
+					sourceExcelData.setComment(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_COMMENT))));
 					//sourceExcelData.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
-					sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("EXHIBIT TYPE"))));
-					sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE TYPE"))));
-					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get("PAYMENT TYPE"))));
-					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW START DATE"))));
-					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get("SOW END DATE"))));
+					sourceExcelData.setExhibit_type(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_EXHIBIT_TYPE))));
+					sourceExcelData.setResourc_type(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_TYPE))));
+					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PAYMENT_TYPE))));
+					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_START_DATE))));
+					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_END_DATE))));
 					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG LOCATION")))); 					
 					list.add(sourceExcelData);
 				}
