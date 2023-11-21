@@ -58,5 +58,9 @@ public class vgGadEntity {
     private String location;
 	@Column(name="\"CG MANAGER\"")
     private String supervisor;
+	public void setProjectCode(String formatCellValue) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

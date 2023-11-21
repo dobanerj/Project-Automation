@@ -77,5 +77,11 @@ public interface ReportUtil {
 	    public final String HC_REPORT_MONTH= "MONTH"; 
 	    public final String HC_REPORT_ACCOUNT_NAME= "ACCOUNT NAME"; 
 	    public final String HC_REPORT_LWD= "LWD"; 
+	    public final String HC_REPORT_SUPERVISOR_NAME = "SUPERVISOR NAME";
+	    public final String HC_REPORT_FS_NONFS_SUBK= "FS/NON FS/SUBK";
+	   
+
+		 
+
 
 } 
