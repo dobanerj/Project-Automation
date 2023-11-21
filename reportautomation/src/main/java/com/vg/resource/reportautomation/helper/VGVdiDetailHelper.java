@@ -16,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
+import com.vg.resource.reportautomation.util.ReportUtil;
 
 public class VGVdiDetailHelper {
 	
@@ -43,13 +44,13 @@ public class VGVdiDetailHelper {
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 				Row row = sheet.getRow(i);
 				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();							
-				vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get("ID"))).toString());
-				vdidata.setResource_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("RESOURCE NAME"))));
-				vdidata.setVg_email_id(formatter.formatCellValue(row.getCell(requiredHeaders.get("VG EMAIL ID"))));
-				vdidata.setVdi_name(formatter.formatCellValue(row.getCell(requiredHeaders.get("VDI NAME"))));
-				vdidata.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get("STATUS"))));
-				vdidata.setOdc_location(formatter.formatCellValue(row.getCell(requiredHeaders.get("ODC LOCATION"))));				
-				vdidata.setLwd(formatter.formatCellValue(row.getCell(requiredHeaders.get("LWD"))));				
+				vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ID))).toString());
+				vdidata.setResource_name(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
+				vdidata.setVg_email_id(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_VG_EMAIL_ID))));
+				vdidata.setVdi_name(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_VDI_NAME))));
+				vdidata.setStatus(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_STATUS))));
+				vdidata.setOdc_location(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ODC_LOCATION))));				
+				vdidata.setLwd(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LWD))));				
 				list.add(vdidata);
 			}
 			
