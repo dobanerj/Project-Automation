@@ -77,5 +77,17 @@ public interface ReportUtil {
 	    public final String HC_REPORT_MONTH= "MONTH"; 
 	    public final String HC_REPORT_ACCOUNT_NAME= "ACCOUNT NAME"; 
 	    public final String HC_REPORT_LWD= "LWD"; 
+	    public final String HC_REPORT_ID="ID";
+	    public final String HC_REPORT_VG_EMAIL_ID="VG EMAIL ID";
+	    public final String HC_REPORT_STATUS="STATUS";
+	    public final String HC_REPORT_EMP_NAME="EMP NAME";
+	    public final String HC_REPORT_EMP_ID="EMP ID";
+	    public final String HC_REPORT_EMP_EMAIL_ID="EMP EMAIL ID";
+	    public final String HC_REPORT_START_DATE="START DATE";
+	    public final String HC_REPORT_END_DATE="END DATE";
+	    public final String HC_REPORT_REGION_IN_GB="REGION(IN/GB/US/CA/FR)";
+	    public final String HC_REPORT_REGION_REGION_OFFSHORE_ONSITE="REVISED REGION (OFFSHORE/ONSITE)";
+	    public final String HC_REPORT_DESIGNATION_GRADE="DESIGNATION/GRADE";
+	    
 
 } 
