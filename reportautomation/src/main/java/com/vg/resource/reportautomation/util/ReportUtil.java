@@ -28,7 +28,7 @@ public interface ReportUtil {
 			   " LEFT JOIN  \"VG_NON_FS_MASTER_DATA\"  on  \"VG_NON_FS_MASTER_DATA\".\"EMP_ID\"  = \"VG_GAD_DATA\".\"LI_LR_ID\" ORDER BY \"VG_NON_FS_MASTER_DATA\".\"EMP_NAME\" ASC ";
 
 
-	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Users/dobanerj/Documents/Report/HCReport.xlsx";   
+	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Report/";   
 	    public final String HC_REPORT_SR_NO= "SR.No";
 	    public final String HC_REPORT_CREW_ID= "CREWId";  
 	    public final String HC_REPORT_LI_LR_ID= "LI/LRID"; 
