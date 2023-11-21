@@ -15,14 +15,13 @@ import lombok.Data;
 @Entity
 public class VGVdiDetailEntity implements Serializable{
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="\"SR.NO\"")
 	private Integer serialNo;
 	@Column(name="\"VDI_GGID\"" ,unique=false)
-	private String vdi_ggid;	
-	@Column(name="\"CREWID\"")
-	private String id;
+	private String vdi_ggid;
 	@Column(name="\"RESOURCE_NAME\"")
 	private String resource_name;
 	@Column(name="\"VG_EMAIL_ID\"")
