@@ -58,5 +58,4 @@ public class vgGadEntity {
     private String location;
 	@Column(name="\"CG MANAGER\"")
     private String supervisor;
-	
 }
