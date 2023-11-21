@@ -44,9 +44,9 @@ public class VGNonFSEntity implements Serializable{
 	@Column(name="\"PROJECT_NAME\"")
 	private String projectname;
 	@Column(name="\"START_DATE\"")
-	private Date startDate;
+	private String startDate;
 	@Column(name="\"END_DATE\"")
-	private Date endDate;
+	private String endDate;
 	@Column(name="\"REGION\"")
 	private String region;
 	@Column(name="\"VG LOCATION\"")
