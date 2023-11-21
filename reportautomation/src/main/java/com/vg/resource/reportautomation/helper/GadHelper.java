@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
- 
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -15,11 +15,12 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
- 
+
 import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.vgGadEntity;
- 
+
 public class GadHelper {	
+	
 	public static boolean checkExcelFormat(MultipartFile file)
 	{
 		String contentType = file.getContentType();
@@ -29,7 +30,7 @@ public class GadHelper {
 		}
 		return false;
 	}
- 
+
 	public static List<vgGadEntity> convertExceltoList(InputStream is)
 	{
 		List<vgGadEntity> list = new ArrayList<>();
@@ -38,9 +39,10 @@ public class GadHelper {
 			DataFormatter formatter = new DataFormatter();
 			Workbook workbook = new XSSFWorkbook(is);
 			Sheet sheet = workbook.getSheetAt(0);
+			
 			for (Cell cell : sheet.getRow(0)) {
-				requiredHeaders.put(cell.getStringCellValue(), cell.getColumnIndex());
- 
+				requiredHeaders.put(cell.getStringCellValue().trim(), cell.getColumnIndex());
+
 			}
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 				Row row = sheet.getRow(i);
@@ -53,7 +55,7 @@ public class GadHelper {
 				vggadEntity.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("Region"))));
 				vggadEntity.setRegionRevised(formatter.formatCellValue(row.getCell(requiredHeaders.get("Region Revised"))));
 				//vggadEntity.setGadCostCenter(formatter.formatCellValue(row.getCell(requiredHeaders.get("GAD Cost Center"))));
-				//vggadEntity.setProjectCode(Double.parseDouble(formatCellValue(row.getCell(requiredHeaders.get("Project Code")))));
+				vggadEntity.setProjectCode(Double.parseDouble(formatCellValue(row.getCell(requiredHeaders.get("Project Code")))));
 				vggadEntity.setProjectName(formatter.formatCellValue(row.getCell(requiredHeaders.get("Project Name"))));
 				vggadEntity.setPractice(formatter.formatCellValue(row.getCell(requiredHeaders.get("Practice"))));
 				vggadEntity.setSbu(formatter.formatCellValue(row.getCell(requiredHeaders.get("SBU"))));
@@ -69,12 +71,13 @@ public class GadHelper {
 				//vggadEntity.setSupervisor(formatter.formatCellValue(row.getCell(requiredHeaders.get("Supervisor FULL NAME"))));not in excel
 				list.add(vggadEntity);
 			}
+			
 
- 
- 
+
 			int rowNumber =0;
 			Iterator<Row> iterator = sheet.iterator();
-
+			
+			
 		}
 		catch(Exception e)
 		{
@@ -82,9 +85,10 @@ public class GadHelper {
 		}
 		return list;
 	}
- 
+
 	private static String formatCellValue(Cell cell) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-}	
+}
+	
