@@ -49,7 +49,7 @@ public class SourcelHelp {
 					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
 					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LEVEL))));
 					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_JOB_ROLE_INPUT))));
-					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SKILL))));
+					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PRIMARY_SKILLS))));
 					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PO))));
 					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID))).isEmpty() || 
 					 formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID))).equals("TBD")))
@@ -66,7 +66,7 @@ public class SourcelHelp {
 					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PAYMENT_TYPE))));
 					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_START_DATE))));
 					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_END_DATE))));
-					sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION_VG)))); 					
+					sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION)))); 					
 					list.add(sourceExcelData);
 				}
 			}
