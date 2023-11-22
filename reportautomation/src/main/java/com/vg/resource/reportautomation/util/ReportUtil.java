@@ -30,11 +30,11 @@ public interface ReportUtil {
 
 	    public final String HC_REPORT_GENERATE_LOCATION= "C:/Report/";   
 	    public final String HC_REPORT_SR_NO= "SR.No";
-	    public final String HC_REPORT_CREW_ID= "CREWId";  
-	    public final String HC_REPORT_LI_LR_ID= "LI/LRID"; 
+	    public final String HC_REPORT_CREW_ID= "VG CREW ID";  
+	    public final String HC_REPORT_LI_LR_ID= "LI/LR ID"; 
 	    public final String HC_REPORT_GG_ID= "GGID"; 
 	    public final String HC_REPORT_RESOURCE_NAME= "RESOURCE NAME"; 
-	    public final String HC_REPORT_CAP_EMAIL_ID= "CAPEMAIL ID"; 
+	    public final String HC_REPORT_CAP_EMAIL_ID= "CAP EMAIL ID"; 
 	    public final String HC_REPORT_VG_EMAIL= "VG EMAIL"; 
 	    public final String HC_REPORT_CG_MANAGER= "CG MANAGER"; 
 	    public final String HC_REPORT_VG_MANAGER= "VG MANAGER"; 
@@ -89,5 +89,15 @@ public interface ReportUtil {
 	    public final String HC_REPORT_REGION_REGION_OFFSHORE_ONSITE="REVISED REGION (OFFSHORE/ONSITE)";
 	    public final String HC_REPORT_DESIGNATION_GRADE="DESIGNATION/GRADE";
 	    
+	    public final String HC_REPORT_SUPERVISOR_NAME = "SUPERVISOR NAME";
+	    public final String HC_REPORT_FS_NONFS_SUBK= "FS/NON FS/SUBK";
+		public final String HC_REPORT_TEXT_COST_CENTER= "COST CENTER TEXT";
+		public final String HC_REPORT_JOB_ROLE_INPUT= "JOB TITLE/ROLE (PLEASE USE DROP DOWN SELECTION)"; 
+		
+	    public final String HC_REPORT_PROJECT_NUMBER= "PROJECT NUMBER"; 
+	   
+
+		 
+
 
 } 

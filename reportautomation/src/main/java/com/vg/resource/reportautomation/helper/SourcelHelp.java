@@ -48,7 +48,7 @@ public class SourcelHelp {
 					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_CREW_ID))));
 					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
 					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LEVEL))));
-					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_JOB_ROLE))));
+					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_JOB_ROLE_INPUT))));
 					sourceExcelData.setPrimaryskill(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SKILL))));
 					sourceExcelData.setPo(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PO))));
 					if(!(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_ID))).isEmpty() || 

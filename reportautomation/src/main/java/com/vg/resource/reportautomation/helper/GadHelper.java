@@ -48,25 +48,25 @@ public class GadHelper {
 					vgGadEntity vggadEntity = new vgGadEntity();
 					
 					vggadEntity.setGgid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GG_ID))));
-					vggadEntity.setLi_lrId(formatter.formatCellValue(row.getCell(requiredHeaders.get("LI/LR ID"))));
-					vggadEntity.setCapEmailid(formatter.formatCellValue(row.getCell(requiredHeaders.get("CAP EMAIL ID"))));
-					vggadEntity.setGraderevised(formatter.formatCellValue(row.getCell(requiredHeaders.get("GRADE REVISED"))));
-					vggadEntity.setLocalgrade(formatter.formatCellValue(row.getCell(requiredHeaders.get("LOCAL GRADE"))));
-					vggadEntity.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get("REGION"))));
-					vggadEntity.setRegionRevised(formatter.formatCellValue(row.getCell(requiredHeaders.get("REGION REVISED"))));
-					//vggadEntity.setGadCostCenter(formatter.formatCellValue(row.getCell(requiredHeaders.get("GAD COST CENTER"))));
-					vggadEntity.setProjectCode(formatter.formatCellValue(row.getCell(requiredHeaders.get("PROJECT NUMBER"))));
-					vggadEntity.setProjectName(formatter.formatCellValue(row.getCell(requiredHeaders.get("PROJECT NAME"))));
-					vggadEntity.setPractice(formatter.formatCellValue(row.getCell(requiredHeaders.get("PRACTICE"))));
-					vggadEntity.setSbu(formatter.formatCellValue(row.getCell(requiredHeaders.get("SBU"))));
-					vggadEntity.setFs_non_fs(formatter.formatCellValue(row.getCell(requiredHeaders.get("FS/NON FS/SUBK"))));
-					vggadEntity.setBuPortfolio(formatter.formatCellValue(row.getCell(requiredHeaders.get("BU PORTFOLIOS"))));
-					vggadEntity.setLob(formatter.formatCellValue(row.getCell(requiredHeaders.get("LOB"))));
-					vggadEntity.setDe(formatter.formatCellValue(row.getCell(requiredHeaders.get("DE"))));
-					vggadEntity.setEm(formatter.formatCellValue(row.getCell(requiredHeaders.get("EM"))));
-					vggadEntity.setSubPractise(formatter.formatCellValue(row.getCell(requiredHeaders.get("SUB PRACTICE"))));
-					vggadEntity.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get("LOCATION"))));
-					vggadEntity.setSupervisor(formatter.formatCellValue(row.getCell(requiredHeaders.get("SUPERVISOR FULL NAME"))));
+					vggadEntity.setLi_lrId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LI_LR_ID))));
+					vggadEntity.setCapEmailid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_CAP_EMAIL_ID))));
+					vggadEntity.setGraderevised(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GRADE_REVISED))));
+					vggadEntity.setLocalgrade(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCAL_GRADE))));
+					vggadEntity.setRegion(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_REGION))));
+					vggadEntity.setRegionRevised(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_REGION_REVISED))));
+					vggadEntity.setGadCostCenter(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_TEXT_COST_CENTER))));
+					vggadEntity.setProjectCode(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PROJECT_NUMBER))));
+					vggadEntity.setProjectName(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PROJECT_NAME))));
+					vggadEntity.setPractice(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PRACTICE))));
+					vggadEntity.setSbu(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SBU))));
+					vggadEntity.setFs_non_fs(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_FS_NONFS_SUBK))));
+					vggadEntity.setBuPortfolio(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_BU_PORTFOLIOS))));
+					vggadEntity.setLob(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOB))));
+					vggadEntity.setDe(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_DE))));
+					vggadEntity.setEm(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_EM))));
+					vggadEntity.setSubPractise(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SUB_PRACTICE))));
+					vggadEntity.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GENERATE_LOCATION))));
+					vggadEntity.setSupervisor(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SUPERVISOR_NAME))));
 					list.add(vggadEntity);
 					}
 				}
