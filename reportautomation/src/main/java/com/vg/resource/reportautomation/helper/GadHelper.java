@@ -65,7 +65,7 @@ public class GadHelper {
 					vggadEntity.setDe(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_DE))));
 					vggadEntity.setEm(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_EM))));
 					vggadEntity.setSubPractise(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SUB_PRACTICE))));
-					vggadEntity.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GENERATE_LOCATION))));
+					vggadEntity.setLocation(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION_INPUT))));
 					vggadEntity.setSupervisor(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SUPERVISOR_NAME))));
 					list.add(vggadEntity);
 					}

@@ -95,6 +95,7 @@ public interface ReportUtil {
 		public final String HC_REPORT_JOB_ROLE_INPUT= "JOB TITLE/ROLE (PLEASE USE DROP DOWN SELECTION)"; 
 		
 	    public final String HC_REPORT_PROJECT_NUMBER= "PROJECT NUMBER"; 
+		public final String HC_REPORT_LOCATION_INPUT= "LOCATION";
 	   
 
 		 
