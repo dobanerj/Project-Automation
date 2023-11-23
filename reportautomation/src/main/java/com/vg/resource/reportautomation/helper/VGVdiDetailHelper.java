@@ -44,7 +44,8 @@ public class VGVdiDetailHelper {
 			for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 				Row row = sheet.getRow(i);
 				VGVdiDetailEntity vdidata = new VGVdiDetailEntity();							
-				vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ID))).toString());
+				//vdidata.setVdi_ggid(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ID))).toString());
+				vdidata.setVg_crew_id(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_ID))).toString());
 				vdidata.setResource_name(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
 				vdidata.setVg_email_id(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_VG_EMAIL_ID))));
 				vdidata.setVdi_name(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_VDI_NAME))));

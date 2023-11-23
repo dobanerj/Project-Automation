@@ -42,10 +42,12 @@ public class SourcelHelp {
 				for (Cell cell : sheet.getRow(sheet.getFirstRowNum())) {
 					requiredHeaders.put(cell.getStringCellValue().toUpperCase().trim(), cell.getColumnIndex());
 				}
+				System.out.println("requiredHeaders---"+requiredHeaders);
 				for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 					Row row = sheet.getRow(i);
 					VGSourceEntity sourceExcelData = new VGSourceEntity();
-					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_CREW_ID))));
+					sourceExcelData.setVGCrewId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_CREW_ID))));
+					sourceExcelData.setGGId(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_GG_ID))));
 					sourceExcelData.setResourceName(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_RESOURCE_NAME))));
 					sourceExcelData.setLevel(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LEVEL))));
 					sourceExcelData.setJobRole(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_JOB_ROLE_INPUT))));
@@ -66,7 +68,7 @@ public class SourcelHelp {
 					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PAYMENT_TYPE))));
 					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_START_DATE))));
 					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_END_DATE))));
-					sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION)))); 					
+					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION)))); 					
 					list.add(sourceExcelData);
 				}
 			}
