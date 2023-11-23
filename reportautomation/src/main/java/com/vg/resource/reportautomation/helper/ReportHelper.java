@@ -30,7 +30,7 @@ public class ReportHelper {
 	private String sow_name;
 	private String status;
 	private String total_contract_amount;
-	private double vgcrew_id;
+	private String vgcrew_id;
 	private String cap_email;
 	private String vg_email;
 	private String cap_manager;
@@ -67,7 +67,6 @@ public class ReportHelper {
 	private String projectname;
 	private Date startDate;
 	private Date endDate;
-	private String revisedRegion;
 	private String lbs;
 	private String lwd;
     private String gadCostCenter;

@@ -19,7 +19,7 @@ public class VGSourceEntity implements Serializable{
 	@Column(name="\"GGID\"")
 	private String gGId;
 	@Column(name="\"VG_CREW_ID\"")
-	private double vGCrewId;
+	private String vGCrewId;
 	@Column(name="\"RESOURCE_NAME\"")
 	private String resourceName;
 	@Column(name="\"LEVEL\"")
