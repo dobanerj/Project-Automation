@@ -39,9 +39,9 @@ public class VGSourceEntity implements Serializable{
 	@Column(name="\"AMOUNT\"")
 	private String amount;
 	@Column(name="\"ROLE_START_DATE\"")
-	private Date roleStartDate;
+	private String roleStartDate;
 	@Column(name="\"ROLE_END_DATE\"")
-	private Date roleEndDate;
+	private String roleEndDate;
 	@Column(name="\"TOTAL_CONTRACT_AMOUNT\"")
 	private String totalContractAmount;
 	@Column(name="\"COMMENTS\"")
@@ -55,9 +55,9 @@ public class VGSourceEntity implements Serializable{
 	@Column(name="\"PAYMENT TYPE\"")
     private String paymentType;
 	@Column(name="\"SOW_START_DATE\"")
-	private Date sowStartDate;
+	private String sowStartDate;
 	@Column(name="\"SOW_END_DATE\"")
-	private Date sowEndDate;
+	private String sowEndDate;
 	@Column(name="\"VG LOCATION\"")
 	private String locationVg;
 }
