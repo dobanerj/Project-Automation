@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.vg.resource.reportautomation.entity.VGNonFSEntity;
-import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
 import com.vg.resource.reportautomation.entity.vgGadEntity;
 import com.vg.resource.reportautomation.helper.GadHelper;
 import com.vg.resource.reportautomation.service.GadService;
@@ -55,9 +52,8 @@ public class GadController {
 	{  
 		gadService.delete(ggid);  
 	}  
-	@PutMapping("VGGad/updateData")
+	@PutMapping("/VGGad/updateData")
 	public vgGadEntity updateData(@RequestBody vgGadEntity vggadEntity) {
 		return gadService.savevgGadEntity(vggadEntity);
 	}
-	
 }

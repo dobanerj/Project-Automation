@@ -16,14 +16,13 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.VGSourceEntity;
-import com.vg.resource.reportautomation.entity.vgGadEntity;
 import com.vg.resource.reportautomation.helper.SourcelHelp;
 import com.vg.resource.reportautomation.service.SourceService;
 
 @RestController
 public class SourceController {
+	
 	@Autowired
 	private SourceService sourcService;
 	
@@ -56,7 +55,7 @@ public class SourceController {
 	{  
 		sourcService.delete(ggid);  
 	}  
-	@PutMapping("Source/updateData")
+	@PutMapping("/Source/updateData")
 	public VGSourceEntity updateData(@RequestBody VGSourceEntity vgSourceEntity) {
 		return sourcService.savevgSourceEntity(vgSourceEntity);
 	}

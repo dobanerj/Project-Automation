@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vg.resource.reportautomation.entity.VGNonFSEntity;
-import com.vg.resource.reportautomation.entity.VGVdiDetailEntity;
-import com.vg.resource.reportautomation.entity.vgGadEntity;
 import com.vg.resource.reportautomation.helper.NonFSHelp;
 import com.vg.resource.reportautomation.service.NonFSService;
 
 @RestController
 public class NonFsController {
+
 	@Autowired
 	private NonFSService nonFSService;
 	
@@ -56,7 +55,7 @@ public class NonFsController {
 		nonFSService.delete(ggid);  
 	}  
 	
-	@PutMapping("NonFs/updateData")
+	@PutMapping("/NonFs/updateData")
 	public VGNonFSEntity updateData(@RequestBody VGNonFSEntity vgNonFSEntity) {
 		return nonFSService.savevgNonFSEntity(vgNonFSEntity);
 	}
