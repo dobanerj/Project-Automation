@@ -1,7 +1,6 @@
 package com.vg.resource.reportautomation.helper;
 
 import java.io.InputStream;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +14,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.vg.resource.reportautomation.entity.VGNonFSEntity;
 import com.vg.resource.reportautomation.entity.VGSourceEntity;
 import com.vg.resource.reportautomation.util.ReportUtil;
  
@@ -68,7 +66,7 @@ public class SourcelHelp {
 					sourceExcelData.setPaymentType(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_PAYMENT_TYPE))));
 					sourceExcelData.setSowStartDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_START_DATE))));
 					sourceExcelData.setSowEndDate(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_SOW_END_DATE))));
-					//sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION)))); 					
+					sourceExcelData.setLocationVg(formatter.formatCellValue(row.getCell(requiredHeaders.get(ReportUtil.HC_REPORT_LOCATION)))); 					
 					list.add(sourceExcelData);
 				}
 			}

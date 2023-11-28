@@ -38,32 +38,30 @@ public class ReportautomationApplication implements CommandLineRunner{
 		String path =args[0];
 		File file=new File(path);
 		
-		System.out.println("Application start");
+		System.out.println("Application start :GAD");
 		gadservice.save(file);
-		System.out.println("Application end");
-		
+		System.out.println("Application end:GAD");
 		
 		
 		String path1 =args[1];
 		File file1=new File(path1);
 		
-		System.out.println("Application start");
-		sourceservice.save(file1);
-		
-		
+		System.out.println("Application start:Source");
+		sourceservice.save(file1);	
+		System.out.println("Application END:Source");	
 		String path2 =args[2];
 		File file2=new File(path2);
 		
-		System.out.println("Application start");
+		System.out.println("Application start:NonFS");
 		noFSexcelService.save(file2);
-		System.out.println("Application end");
+		System.out.println("Application end:NonFS");
 		
 		String path3 =args[3];
 		File file3=new File(path3);
 		
-		System.out.println("Application start");
+		System.out.println("Application start:ODC");
 		vgVdidetailService.save(file3);
-		System.out.println("Application end");
+		System.out.println("Application end:ODC");
 		
 	
 		try {
@@ -73,8 +71,6 @@ public class ReportautomationApplication implements CommandLineRunner{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		System.out.println("Application end");
 		
 	
 	}

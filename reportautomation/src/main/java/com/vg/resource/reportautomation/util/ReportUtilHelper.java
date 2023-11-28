@@ -81,6 +81,7 @@ public class ReportUtilHelper {
                 helper.setSbu(fsRs.getString("SBU"));
                 helper.setSow_name(fsRs.getString("SOW_NAME"));
                 helper.setCap_manager(fsRs.getString("CG MANAGER"));
+                helper.setVg_location(fsRs.getString("VG LOCATION"));
                 
 				listOfReport.add(helper);
 			}
